@@ -165,11 +165,19 @@
 .u-pl-16 {
     padding-left: 1rem;
 }
+.u-pl-80 {
+    padding-left: 5rem;
+}
+.u-pr-16 {
+    padding-right: 6rem;
+}
 
 .u-mt-5 {
     margin-top: 0.5rem;
 }
-
+.u-ml-80 {
+    margin-left: 5rem;
+}
 .u-mt-10 {
     margin-top: 0.625rem;
 }
@@ -227,6 +235,7 @@
 .u-mr-16 {
     margin-right: 1rem;
 }
+
 .u-gap-5{
     gap: 5rem;
 }
@@ -608,6 +617,100 @@
 .button-container button{
     width: 100%;
 }
+
+/* Myrick login page */
+.login-container{
+    width: 87rem;
+    padding: 20px;
+    margin: auto;
+}
+.main-card-body{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    max-width: 87rem;
+    min-height: 70vh;
+    overflow: auto;
+    display: flex;
+    /* flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center; */
+}
+
+.login-card-container{
+    max-width: 43.5rem;
+    width: 100%
+}
+.login-card-container img {
+    max-width: 100%;
+    width: 500px;
+}
+.login-card-body{
+    width: 100%;
+    max-width: 500px;
+    height: 450px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow: auto;
+    padding:20px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+.background-container-gradient {
+    background: linear-gradient(to left, #1F51A4, #0987CF);
+}
+
+.login-input{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #1C58A9; 
+}
+.login-title-text{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.login-title-text span{
+    font-family: 'Roboto', sans-serif;
+}
+
+.remember-password-containter{
+    gap: 5px;
+}
+
+.button-container button{
+    width: 100%;
+}
+
+@media (max-width: 1065px) {
+.main-card-body {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+.login-card-container{
+    padding:10px;
+}
+.login-container{
+    padding: 0px;
+}
+
+.login-card-container img {
+    width: 70%;
+}
+}
+
 
 /* Use a media query to apply styles for smaller screens */
 @media only screen and (max-width: 500px) {
