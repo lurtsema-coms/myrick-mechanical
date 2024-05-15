@@ -20,7 +20,6 @@
       background-position: center;
       background-size: cover;
       width: auto;
-      max-height: 800px;
       align-self: center;
     }
 
@@ -208,14 +207,14 @@
         </div>
     </section>
     <section id="testimonials-section" class="testimonials-section">
-        <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="section-wrapper m-3 m-lg-5 px-3 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold mb-5">TESTIMONIALS</h1>
             {{-- <div class="row row-cols-1 row-cols-xxl-4 gap-3"> --}}
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                            <div class="testimonial-card h-100 p-1 p-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
                                 <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
                                     {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
                                 </div>
@@ -229,7 +228,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                            <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
                                 <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
                                     {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
                                 </div>
@@ -243,7 +242,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                            <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
                                 <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
                                     {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
                                 </div>
@@ -335,7 +334,6 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      slidesPerView: 2,
       coverflowEffect: {
         rotate: 0,
         stretch: 0,
@@ -346,6 +344,16 @@
       pagination: {
         el: ".swiper-pagination",
       },
+      breakpoints: {
+        300: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        1200: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+        },
+    },
     });
     $('.nav-hamburger').on('click', function() {
         $('.navbar-ul').slideToggle();
