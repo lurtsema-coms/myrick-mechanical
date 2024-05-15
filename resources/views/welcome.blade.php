@@ -12,8 +12,6 @@
     <style>
     .swiper {
       width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
     }
 
     .swiper-slide {
@@ -45,7 +43,7 @@
             <button class="text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">BOOK NOW</button>
         </div>
     </section>
-    <section class="logo-section">
+    <section class="logo-section d-none d-lg-block">
         <div class="logo-wrapper bg-light d-flex justify-content-center align-items-center p-3 m-auto">
             <img class="img-fluid logo-photo" src="{{ asset('images/Partners/Logo.png') }}" alt="">
         </div>
@@ -207,8 +205,8 @@
         </div>
     </section>
     <section id="testimonials-section" class="testimonials-section">
-        <div class="section-wrapper m-3 m-lg-5 px-3 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
-            <h1 class="text-center fw-bold mb-5">TESTIMONIALS</h1>
+        <div class="section-wrapper m-1 m-lg-5 px-1 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
+            <h1 class="text-center fw-bold mb-2 mb-lg-5">TESTIMONIALS</h1>
             {{-- <div class="row row-cols-1 row-cols-xxl-4 gap-3"> --}}
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -220,7 +218,7 @@
                                 </div>
                                 <h5 class="customer-name text-dark fw-semibold">Stacy V.</h5>
                                 <p class="stars text-warning">★★★★★</p>
-                                <p class="text-dark text-center">
+                                <p class="text-dark text-center fs-6 lh-sm">
                                     We built a log home and were at a loss on what to do for heating and cooling. Travis Myrick came to our house gave us ideas and solved our problem. We love our mini splits. We highly recommend him, his workers and his company. They are the best!                        
                                 </p>
                             </div>
@@ -234,7 +232,7 @@
                                 </div>
                                 <h5 class="customer-name text-dark fw-semibold">Nancy H.</h5>
                                 <p class="stars text-warning">★★★★★</p>
-                                <p class="text-dark text-center">
+                                <p class="text-dark text-center fs-6 lh-sm">
                                     Myrick Mechanical LLC of Pleasanton KS. The Company installed the HVAC vents to the East side of the House. He was very professional, did the job quickly and reasonably priced. I would Highly recommend this company. Very good experience.
                                 </p>
                             </div>
@@ -248,7 +246,7 @@
                                 </div>
                                 <h5 class="customer-name text-dark fw-semibold">Stephanie S.</h5>
                                 <p class="stars text-warning">★★★★★</p>
-                                <p class="text-dark text-center">
+                                <p class="text-dark text-center fs-6 lh-sm">
                                     Travis gave us an estimate and then was able to complete the job in good time. He was thorough and things were picked up and clean when he was done. I highly recommend Myrick Mechanical.
                                 </p>
                             </div>
@@ -263,13 +261,13 @@
         </div>
     </section>
     <section id="contact-us-section" class="contact-us-section">
-        <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="section-wrapper m-1 m-md-5 px-1 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="section-title text-center fw-bold">SPEAK TO US TODAY!</h1>
             <p class="text-center px-1 mx-0 text-white mb-5">For more information on our HVAC services, contact our technicians today. <br/>
                 Call us for a free, no-obligation estimate for residential and commercial HVAC services.
             </p>
             <div class="w-100 row row-cols-xl-3 gap-5">
-                <div class="contact-left-side col d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-3">
+                <div class="contact-left-side p-0 col d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-3">
                     <h3 class="text-center">Pleasanton, KS</h3>
                     <div style="overflow:hidden;resize:none;max-width:100%;width:90%; min-height: 500px; aspect-ratio: 5 / 3;">
                         <div id="g-mapdisplay" style="height:100%; width:100%;max-width:100%; overflow:hidden border-radius: 1rem;">

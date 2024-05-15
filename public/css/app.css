@@ -173,7 +173,7 @@ body {
 .services-img-wrapper {
   max-width: min(100%, 300px);
   aspect-ratio: 1 / 1;
-  transform: translateY(-2rem);
+  transform: translateY(-1rem);
 }
 
 .services-img {
