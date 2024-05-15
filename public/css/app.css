@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  font-size: 25px !important;
+  --primary-blue: #313d94;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+}
+
+body {
+  background-color: linear;
+  background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgb(50, 54, 141) 100%);
+}
+
+.text-blue {
+  color: var(--primary-blue);
+}
+
+.bg-blue {
+  background-color: var(--primary-blue);
+}
+
+.hero-section {
+  height: 100vh;
+}
+
+
+.hero-content {
+  max-width: 1000px;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar {
+  bottom: 0;
+}
+
+.navbar-list {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-section {
+  height: 0;
+}
+
+.logo-wrapper {
+  width: fit-content;
+  border-radius: 100vw 100vw 0 0;
+  transform: translateY(-100%);
+}
+
+.logo-photo {
+  max-width: 250px;
+}
+
+.percent-text {
+  /* font-size: 7rem; */
+  font-size: clamp(3.2rem, 0.5692rem + 9vw, 8rem);
+  font-weight: 900;
+  line-height: 7rem;
+}
+
+.off-text {
+  font-size: 3rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  color: white;
+  font-weight: 700;
+  text-shadow:
+    -3px -3px 0 var(--primary-blue),  /* Larger offset */
+    3px -3px 0 var(--primary-blue),
+    -3px 3px 0 var(--primary-blue),
+    3px 3px 0 var(--primary-blue);
+}
+
+.off-text::after{
+  content: 'OFF';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  z-index: 5;
+  color: var(--primary-blue);
+}
+
+.promo-book-btn {
+  background: linear-gradient(to right, #033064 0%, #465beb 100%);
+}
+
+.promo-right-side {
+  max-width: 800px;
+}
+
+.promo-guy {
+  /* max-width: 700px; */
+  max-width: 100%;
+  max-height: 700px;
+}
+
+.customer-satisfaction-content {
+  max-width: 1500px;
+}
+
+.customer-satisfaction-left-side {
+  max-width: 600px;
+}
+
+.aircon-guy {
+  max-width: 100%;
+}
+
+.accreditation-img-wrapper {
+  border-radius: 0 1rem 1rem 0;
+  max-width: 700px;
+}
+
+.services-card {
+  background: linear-gradient(to bottom, #ffffff 0%, #a2a5ae 100%);
+}
+
+.services-card-border {
+  background: linear-gradient(to bottom, #ffffff 0%, #63697b 100%);
+}
+
+.service-img-border {
+  padding: 0.3rem;
+  background: linear-gradient(to right, #033064 0%, #465beb 100%);
+}
+
+.services-img-wrapper {
+  max-width: min(100%, 300px);
+  aspect-ratio: 1 / 1;
+  transform: translateY(-2rem);
+}
+
+.services-img {
+  object-fit: cover;
+}
+
+.waterless-geo-img {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  width: 80%;
+  transform: translateX(15%);
+}
+
+.testimonial-card-wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #63697b 100%);
+}
+
+.testimonial-card {
+  background: linear-gradient(to bottom, #ffffff 0%, #a2a5ae 100%);
+}
+
+.contact-form-input {
+  color: var(--primary-blue);
+  outline: none;
+  border: none;
+}
+
+.contact-input-wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #63697b 100%);
+}
+
+.footer {
+  padding-top: clamp(3.2rem, 1rem + 92vw, 15rem) !important; 
+}
+
+.social-media-link {
+  max-width: 60px;
+}
+
+.gear-bg {
+  bottom: 0;
+  z-index: -1;
+  margin: 0;
+}
