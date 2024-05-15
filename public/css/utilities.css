@@ -107,7 +107,17 @@
 .u-bg-primary {
     background-color: var(--primary);
 }
+.u-action-btn {
+    padding: 5px 10px;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.u-action-btn:hover {
+    opacity: 0.7;
+}
 .u-bg-default {
     background-color: var(--lighter);
 }
@@ -241,6 +251,12 @@
     margin-right: 1rem;
 }
 
+.u-gap-10{
+    gap: 0.625rem;
+}
+.u-gap-16{
+    gap: 1rem;
+}
 .u-gap-5{
     gap: 5rem;
 }
@@ -512,6 +528,22 @@
 .action-btn:hover {
     opacity: 0.7;
 }
+.u-input {
+    height: 2.5rem;
+    width: 100%;
+    border: 1px solid transparent;
+    padding: 0 10px;
+    border-radius: 5px;
+    color: #3c3b3b;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 1px solid #b3b9c2;
+}
+
+.u-input:focus {
+    border: 2px solid #000000;
+}
 
 /* Statistic box */
 .s-box {
@@ -622,6 +654,11 @@
 .button-container button{
     width: 100%;
 }
+
+
+
+
+
 
 /* Myrick login page */
 .login-container{
