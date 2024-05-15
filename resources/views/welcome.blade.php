@@ -7,6 +7,7 @@
     <title>Myrick Mechanical</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
     .swiper {
       width: 100%;
@@ -17,8 +18,9 @@
     .swiper-slide {
       background-position: center;
       background-size: cover;
-      width: 300px;
-      height: 300px;
+      width: auto;
+      max-height: 800px;
+      align-self: center;
     }
 
     .swiper-slide img {
@@ -178,50 +180,81 @@
     <section class="our-works-section">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold">OUR WORKS</h1>
-
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/Photos/photos from old web (2).webp') }}" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/Photos/photos from old web (3).webp') }}" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/Photos/photos from old web (4).webp') }}" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/Photos/photos from old web (5).webp') }}" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
     </section>
     <section class="testimonials-section">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold mb-5">TESTIMONIALS</h1>
-            <div class="row row-cols-1 row-cols-xxl-4 gap-3">
-                <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                    <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                        <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
-                            {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
+            {{-- <div class="row row-cols-1 row-cols-xxl-4 gap-3"> --}}
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
+                            <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                                <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
+                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
+                                </div>
+                                <h5 class="customer-name text-dark fw-semibold">Stacy V.</h5>
+                                <p class="stars text-warning">★★★★★</p>
+                                <p class="text-dark text-center">
+                                    We built a log home and were at a loss on what to do for heating and cooling. Travis Myrick came to our house gave us ideas and solved our problem. We love our mini splits. We highly recommend him, his workers and his company. They are the best!                        
+                                </p>
+                            </div>
                         </div>
-                        <h5 class="customer-name text-dark fw-semibold">Stacy V.</h5>
-                        <p class="stars text-warning">★★★★★</p>
-                        <p class="text-dark text-center">
-                            We built a log home and were at a loss on what to do for heating and cooling. Travis Myrick came to our house gave us ideas and solved our problem. We love our mini splits. We highly recommend him, his workers and his company. They are the best!                        
-                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
+                            <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                                <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
+                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
+                                </div>
+                                <h5 class="customer-name text-dark fw-semibold">Nancy H.</h5>
+                                <p class="stars text-warning">★★★★★</p>
+                                <p class="text-dark text-center">
+                                    Myrick Mechanical LLC of Pleasanton KS. The Company installed the HVAC vents to the East side of the House. He was very professional, did the job quickly and reasonably priced. I would Highly recommend this company. Very good experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
+                            <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                                <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
+                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
+                                </div>
+                                <h5 class="customer-name text-dark fw-semibold">Stephanie S.</h5>
+                                <p class="stars text-warning">★★★★★</p>
+                                <p class="text-dark text-center">
+                                    Travis gave us an estimate and then was able to complete the job in good time. He was thorough and things were picked up and clean when he was done. I highly recommend Myrick Mechanical.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                    <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                        <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
-                            {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
-                        </div>
-                        <h5 class="customer-name text-dark fw-semibold">Nancy H.</h5>
-                        <p class="stars text-warning">★★★★★</p>
-                        <p class="text-dark text-center">
-                            Myrick Mechanical LLC of Pleasanton KS. The Company installed the HVAC vents to the East side of the House. He was very professional, did the job quickly and reasonably priced. I would Highly recommend this company. Very good experience.
-                        </p>
-                    </div>
-                </div>
-                <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                    <div class="testimonial-card h-100 py-5 px-1 px-md-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                        <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
-                            {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
-                        </div>
-                        <h5 class="customer-name text-dark fw-semibold">Stephanie S.</h5>
-                        <p class="stars text-warning">★★★★★</p>
-                        <p class="text-dark text-center">
-                            Travis gave us an estimate and then was able to complete the job in good time. He was thorough and things were picked up and clean when he was done. I highly recommend Myrick Mechanical.
-                        </p>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
+            {{-- </div> --}}
         </div>
     </section>
     <section class="contact-us-section">
@@ -288,15 +321,19 @@
     <img class="gear-bg w-100 position-absolute" src="{{asset('images/Elements/Footer Gear 2.svg')}}" alt="">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-    const swiper = new Swiper(".mySwiper", {
+    const swiper = new Swiper(".swiper", {
       effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: "auto",
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerView: 2,
       coverflowEffect: {
-        rotate: 50,
+        rotate: 0,
         stretch: 0,
-        depth: 100,
+        depth: 500,
         modifier: 1,
         slideShadows: true,
       },

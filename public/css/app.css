@@ -176,11 +176,12 @@ body {
 }
 
 .testimonial-card-wrapper {
+  /* max-width: 800px; */
   background: linear-gradient(to bottom, #ffffff 0%, #63697b 100%);
 }
 
 .testimonial-card {
-  background: linear-gradient(to bottom, #ffffff 0%, #a2a5ae 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #c4c6d3 100%);
 }
 
 .contact-form-input {
