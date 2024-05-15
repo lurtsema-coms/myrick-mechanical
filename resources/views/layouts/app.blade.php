@@ -28,7 +28,7 @@
         background: #F5F6FA;
     }
     .dropdown-menu{
-        background-color: #1D57A9 !important;
+        background-color: #3873c5 !important;
     }
     .navbar-toggler-icon,
     .navbar-toggler,
@@ -49,7 +49,7 @@
     .navbar-nav span {
         position: relative;
     }
-
+    
     .navbar-nav span::after {
         content: "";
         position: absolute;
@@ -62,6 +62,14 @@
     }
     .navbar-nav span:hover::after {
         width: 100%; /* Expand the width on hover */
+    }
+
+    .navbar-nav.active-nav span::after {
+        width: 100%;
+    }
+
+    .dropdown-menu a{
+        padding-left: 10px
     }
     .dropdown-menu a:hover{
         background: rgba(0, 0, 0, 0.103) !important;
@@ -81,19 +89,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <a class=" d-flex " href="#">
+                    <ul class="navbar-nav {{ Request::is('home') ? ' active-nav' : '' }} me-auto">
+                        <a class=" d-flex " href="{{ route('home')}}">
                             <span class=" u-ml-80">Dashboard</span>
                         </a>
                     </ul>
-                    <ul class="navbar-nav me-auto">
-                        <a class=" d-flex " href="#">
+                    <ul class="navbar-nav {{ Request::is('manage_account') ? ' active-nav' : '' }} me-auto">
+                        <a class=" d-flex " href="{{ route('manageAccount')}}">
                             <span class=" u-ml-80">Manage Accounts</span>
                         </a>
                     </ul>
-                    <ul class="navbar-nav me-auto">
-                        <a class=" d-flex " href="#">
-                            <span class=" u-ml-80">Export Forms</span>
+                    <ul class="navbar-nav {{ Request::is('export_form') ? ' active-nav' : '' }} me-auto">
+                        <a class=" d-flex " href="{{route('exportForm')}}">
+                            <span class=" u-ml-80">Export Form</span>
                         </a>
                     </ul>
                     <!-- Right Side Of Navbar -->
@@ -116,6 +124,9 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item u-p-5" href="#">
+                                        Profile
+                                    </a>
                                     <a class="dropdown-item u-p-5" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
