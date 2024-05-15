@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ExportFormController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ManageAccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +22,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Home
+Route::get('/home', [HomeController::class, 'index'])->middleware(['auth'])->name('home');
+
+//Manage Account
+Route::get('/manage_account', [ManageAccountController::class, 'index'])->middleware(['auth'])->name('manageAccount');
 
 
+//Export Form
+Route::get('/export_form', [ExportFormController::class, 'index'])->middleware(['auth'])->name('exportForm');
+
+
+//logout
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

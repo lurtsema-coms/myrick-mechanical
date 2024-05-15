@@ -2,68 +2,7 @@
 
 @section('styles')
 <style>
-    .main-container{
-        box-shadow: 0 5px 10px rgba(109, 109, 109, 0.349) !important;
-    }
-    .container-header{
-        display: flex;
-        align-items: center;
-        font: bold;
-        font-size: 1.3rem;
-        padding: 1.0rem;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;    
-        background: #eef1f4;
-        margin: 0px;
-    }
-    .container-body{
-        height: 600px;
-        padding: 20px;
-    }
-    .myTable{
-        border-collapse: collapse;
-        width: 100%;
-        max-width: 1000px; 
-        margin: auto;
-        margin-top: 2rem;
-        border-radius: 5px 5px 0px 0px;
-        overflow: hidden;
-    }
-    .myTable thead tr{
-        font-weight: bold;
-        font-size: 14px;
-        background: #f7f4f4;
-        color: black;
-        text-align: left;
-        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
-        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-        }
-    .myTable th,
-    .myTable td{
-        padding: 12px 15px;
-    }
 
-    .myTable tbody tr{
-        border-bottom: 1px solid rgb(207, 205, 205)
-    }
-    .myTable tbody tr:nth-of-type(even){
-        background: #f7f4f4
-    }
-    .myTable tbody tr:last-of-type{
-        border-bottom: 2px solid #011627;
-    }
-    .myTable tbody tr .active-row{
-        font-weight:bold;
-        color: #011627;  
-    }
-
-
-    .table-responsive {
-        scrollbar-color: #888 #f1f1f1; /* thumb color and track color */
-        scrollbar-width: thin; /* scrollbar width */
-    }
-    .file-upload-button{
-        margin-top: 20px; 
-    }
 
     .modal-box{
         max-width: 75rem !important;
@@ -156,7 +95,41 @@
                                             Edit
                                         </button>
                                         <button class="u-action-btn u-bg-danger">
-                                            delete
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Placement 1</td>
+                                    <td>Test</td>
+                                    <td>Gabriel Quing</td>
+                                    <td>May 16 2024</td>
+                                    <td>Gabriel Quing</td>
+                                    <td>May 16 2024</td>
+                                    <td>dasdsad</td>
+                                    <td class="d-flex u-gap-10">
+                                        <button class="u-action-btn u-bg-primary">
+                                            Edit
+                                        </button>
+                                        <button class="u-action-btn u-bg-danger">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Placement 1</td>
+                                    <td>Test</td>
+                                    <td>Gabriel Quing</td>
+                                    <td>May 16 2024</td>
+                                    <td>Gabriel Quing</td>
+                                    <td>May 16 2024</td>
+                                    <td>dasdsad</td>
+                                    <td class="d-flex u-gap-10">
+                                        <button class="u-action-btn u-bg-primary">
+                                            Edit
+                                        </button>
+                                        <button class="u-action-btn u-bg-danger">
+                                            Delete
                                         </button>
                                     </td>
                                 </tr>
