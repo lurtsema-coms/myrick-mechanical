@@ -18,9 +18,14 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @yield('styles') <!-- Include custom styles here -->
+
 </head>
 
 <style>
+    body{
+        background: #F5F6FA;
+    }
     .dropdown-menu{
         background-color: #1D57A9 !important;
     }
@@ -77,7 +82,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <a class=" d-flex " href="#">
-                            <span class=" u-ml-80">Edit Page</span>
+                            <span class=" u-ml-80">Dashboard</span>
                         </a>
                     </ul>
                     <ul class="navbar-nav me-auto">
