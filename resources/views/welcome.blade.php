@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
     .swiper {
       width: 100%;
@@ -51,15 +52,20 @@
         </div>
     </section>
     <nav class="navbar-list w-100 p-3 px-sm-5 bg-light">
-        <ul class="w-100 m-0 px-md-3 d-flex flex-row justify-content-between align-items-center list-unstyled">
-            <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">SERVICES</a></li>
-            <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">HOME</a></li>
-            <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">ABOUT</a></li>
-            <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">CONTACT</a></li>
-            <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">WORKS</a></li>
+        <button class="nav-hamburger rounded d-flex d-lg-none  flex-column justify-content-center align-items-center gap-1" type="button">
+            <div class="icon-bar"></div>
+            <div class="icon-bar"></div>
+            <div class="icon-bar"></div>
+        </button>
+        <ul class="navbar-ul w-100 m-0 px-md-3 d-lg-flex flex-column flex-lg-row justify-content-between align-items-center list-unstyled">
+            <li class="text-center"><a href="#services-section" class="text-decoration-none text-blue fw-bold fs-4" href="">SERVICES</a></li>
+            <li class="text-center"><a href="#" class="text-decoration-none text-blue fw-bold fs-4" href="">HOME</a></li>
+            <li class="text-center"><a href="#customer-satisfaction-section" class="text-decoration-none text-blue fw-bold fs-4" href="">ABOUT</a></li>
+            <li class="text-center"><a href="#contact-us-section" class="text-decoration-none text-blue fw-bold fs-4" href="">CONTACT</a></li>
+            <li class="text-center"><a href="#our-works-section" class="text-decoration-none text-blue fw-bold fs-4" href="">WORKS</a></li>
         </ul>
     </nav>
-    <section class="promo-section">
+    <section id="promo-section" class="promo-section">
         <div class="section-wrapper m-3 m-sm-5">
             <div class="promo-card-wrapper m-0 px-0 py-3 rounded-4 bg-dark">
                 <div class="promo-card bg-light p-2 p-lg-5 rounded-4 d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-xl-around">
@@ -77,7 +83,7 @@
             </div>
         </div>
     </section>
-    <section class="customer-satisfaction-section">
+    <section id="customer-satisfaction-section" class="customer-satisfaction-section">
         <div class="section-wrapper m-3 m-sm-5 px-lg-5 d-flex flex-column align-items-center justify-content-center">
             <p class="fs-5 mb-1 fst-italic text-center">“This is why we do what we do”</p>
             <h1 class="fw-bold fs-2 text-center">CUSTOMER SATISFACTION GUARANTEED!</h1>
@@ -99,7 +105,7 @@
             </div>
         </div>
     </section>
-    <section class="services-section">
+    <section id="services-section" class="services-section">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="section-title text-center fw-bold">SERVICES</h1>
             <p class="text-center px-1 mx-0">
@@ -177,7 +183,7 @@
             <button class="text-blue fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Learn More</button>
         </div>
     </section>
-    <section class="our-works-section">
+    <section id="our-works-section" class="our-works-section">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold">OUR WORKS</h1>
             <div class="swiper">
@@ -201,7 +207,7 @@
             </div>
         </div>
     </section>
-    <section class="testimonials-section">
+    <section id="testimonials-section" class="testimonials-section">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold mb-5">TESTIMONIALS</h1>
             {{-- <div class="row row-cols-1 row-cols-xxl-4 gap-3"> --}}
@@ -257,7 +263,7 @@
             {{-- </div> --}}
         </div>
     </section>
-    <section class="contact-us-section">
+    <section id="contact-us-section" class="contact-us-section">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="section-title text-center fw-bold">SPEAK TO US TODAY!</h1>
             <p class="text-center px-1 mx-0 text-white mb-5">For more information on our HVAC services, contact our technicians today. <br/>
@@ -341,6 +347,13 @@
         el: ".swiper-pagination",
       },
     });
+    $('.nav-hamburger').on('click', function() {
+        $('.navbar-ul').slideToggle();
+    });
+
+    $('.navbar-ul a').on('click', function() {
+        $('.navbar-ul').slideToggle();
+    })
   </script>
 </body>
 </html>
