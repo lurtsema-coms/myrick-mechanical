@@ -54,6 +54,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.button-action:hover {
+  opacity: 0.7;
+}
+
 .navbar {
   bottom: 0;
 }
@@ -85,10 +89,12 @@ body {
   width: fit-content;
   border-radius: 100vw 100vw 0 0;
   transform: translateY(-100%);
+  max-width: 50%;
+  /* max-height: 100px; */
 }
 
 .logo-photo {
-  max-width: 250px;
+  max-height: 170px;
 }
 
 .percent-text {
@@ -219,4 +225,40 @@ body {
   bottom: 0;
   z-index: -1;
   margin: 0;
+}
+
+.partner-card img {
+  max-height: 150px !important;
+  width: auto;
+}
+
+
+/* swiper */
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: auto;
+  align-self: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 992px) {
+  :root{
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :root{
+    font-size: 20px !important;
+  }
 }

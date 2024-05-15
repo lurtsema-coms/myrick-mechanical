@@ -9,23 +9,6 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <style>
-    .swiper {
-      width: 100%;
-    }
-
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: auto;
-      align-self: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-    }
-    </style>
 </head>
 <body class="position-relative">
     <section class="hero-section d-flex flex-column align-item-center justify-content-center position-relative">
@@ -40,12 +23,12 @@
                 <span class="fw-bold text-white fs-1">INDUSTRIAL, COMMERCIAL, AND RESIDENTIAL</span> 
             </h1>
             <p class="text-white fs-6">Whether it’s HVAC installation, maintenance, or repairs, we’ve got you covered.</p>
-            <a href="#contact-us-section" class="text-blue text-decoration-none bg-light fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">BOOK NOW</a>
+            <a href="#contact-us-section" class="button-action text-blue text-decoration-none bg-light fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">BOOK NOW</a>
         </div>
     </section>
-    <section class="logo-section d-none d-lg-block">
+    <section class="logo-section">
         <div class="logo-wrapper bg-light d-flex justify-content-center align-items-center p-3 m-auto">
-            <img class="img-fluid logo-photo" src="{{ asset('images/Partners/Logo.png') }}" alt="">
+            <img class="logo-photo img-fluid" src="{{ asset('images/Partners/Logo.png') }}" alt="">
         </div>
     </section>
     <nav class="navbar-list w-100 p-3 px-sm-5 bg-light">
@@ -71,7 +54,7 @@
                             <h1 class="text-blue percent-text text-center m-0">20% <span class="off-text position-relative">OFF</span></h1>
                             <h2 class="text-blue fw-bold text-center">3 Days : 22 hrs left</h2>
                         </div>
-                        <a href="#contact-us-section" class="promo-book-btn text-light py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap text-decoration-none">BOOK NOW</a>
+                        <a href="#contact-us-section" class="button-action promo-book-btn text-light py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap text-decoration-none">BOOK NOW</a>
                     </div>
                     <div class="promo-right-side">
                         <img class="promo-guy img-fluid" src="{{ asset('images/Photos/Promo Guy.png') }}" alt="">
@@ -102,7 +85,7 @@
             </div>
         </div>
     </section>
-    <section id="services-section" class="services-section">
+    <section id="services-section" class="services-section mb-5">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="section-title text-center fw-bold">SERVICES</h1>
             <p class="text-center px-1 mx-0">
@@ -177,12 +160,12 @@
                     </div>
                 </div>
             </div>
-            <button class="text-blue fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Learn More</button>
+            <a href="#" class="button-action text-blue bg-light text-decoration-none fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Learn More</a>
         </div>
     </section>
     <section id="our-works-section" class="our-works-section">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
-            <h1 class="text-center fw-bold">OUR WORKS</h1>
+            <h1 class="text-center fw-bold mb-3">OUR WORKS</h1>
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -290,7 +273,7 @@
                         <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
                             <textarea class="contact-form-input rounded w-100 p-2" name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
                         </div>
-                        <button class="text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Send</button>
+                        <button class="button-action text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Send</button>
                     </form>
                 </div>
             </div>
@@ -301,16 +284,16 @@
         <div class="section-wrapper mx-3 mt-3 mx-md-5 mt-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <div class="partners row row-cols-1 row-cols-xl-5 gap-3">
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
-                    <img class="img-fluid w-100" src="{{ asset('images/Partners/WGeo.png') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('images/Partners/WGeo.png') }}" alt="">
                 </div>
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
-                    <img class="img-fluid w-100" src="{{ asset('images/Partners/Kwik.png') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('images/Partners/Kwik.png') }}" alt="">
                 </div>
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
-                    <img class="img-fluid w-100" src="{{ asset('images/Partners/Ruud.png') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('images/Partners/Ruud.png') }}" alt="">
                 </div>
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
-                    <img class="img-fluid w-100" src="{{ asset('images/Partners/Evergy.png') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('images/Partners/Evergy.png') }}" alt="">
                 </div>
             </div>
             <div class="social-media d-flex justify-content-center align-items-center gap-3 mt-5">
@@ -359,7 +342,7 @@
 
     $('.navbar-ul a').on('click', function() {
         $('.navbar-ul').slideToggle();
-    })
+    });
   </script>
 </body>
 </html>
