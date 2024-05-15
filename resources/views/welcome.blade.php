@@ -40,7 +40,7 @@
                 <span class="fw-bold text-white fs-1">INDUSTRIAL, COMMERCIAL, AND RESIDENTIAL</span> 
             </h1>
             <p class="text-white fs-6">Whether it’s HVAC installation, maintenance, or repairs, we’ve got you covered.</p>
-            <button class="text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">BOOK NOW</button>
+            <a href="#contact-us-section" class="text-blue text-decoration-none bg-light fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">BOOK NOW</a>
         </div>
     </section>
     <section class="logo-section d-none d-lg-block">
@@ -71,7 +71,7 @@
                             <h1 class="text-blue percent-text text-center m-0">20% <span class="off-text position-relative">OFF</span></h1>
                             <h2 class="text-blue fw-bold text-center">3 Days : 22 hrs left</h2>
                         </div>
-                        <button class="promo-book-btn py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap">BOOK NOW</button>
+                        <a href="#contact-us-section" class="promo-book-btn text-light py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap text-decoration-none">BOOK NOW</a>
                     </div>
                     <div class="promo-right-side">
                         <img class="promo-guy img-fluid" src="{{ asset('images/Photos/Promo Guy.png') }}" alt="">
