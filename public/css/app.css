@@ -109,6 +109,10 @@ body {
   color: var(--primary-blue);
 }
 
+.promo-card-wrapper {
+  background: linear-gradient(to bottom, #f9f9fb 0%, #d8dae3 100%);
+}
+
 .promo-book-btn {
   background: linear-gradient(to right, #033064 0%, #465beb 100%);
 }

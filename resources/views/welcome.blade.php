@@ -48,9 +48,7 @@
             <img class="img-fluid logo-photo" src="{{ asset('images/Partners/Logo.png') }}" alt="">
         </div>
     </section>
-    <nav class="navbar p-0 d-flex flex-column justify-content-end align-items-center flex-grow-1">
-    </nav>
-    <div class="navbar-list w-100 p-3 px-sm-5 bg-light">
+    <nav class="navbar-list w-100 p-3 px-sm-5 bg-light">
         <ul class="w-100 m-0 px-md-3 d-flex flex-row justify-content-between align-items-center list-unstyled">
             <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">SERVICES</a></li>
             <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">HOME</a></li>
@@ -58,19 +56,21 @@
             <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">CONTACT</a></li>
             <li class=""><a class="text-decoration-none text-blue fw-bold fs-4" href="">WORKS</a></li>
         </ul>
-    </div>
+    </nav>
     <section class="promo-section">
         <div class="section-wrapper m-3 m-sm-5">
-            <div class="promo-card bg-light p-2 p-lg-5 rounded-4 d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-xl-around">
-                <div class="promo-left-side d-flex flex-column align-items-center">
-                    <div class="promo-details">
-                        <h1 class="text-blue percent-text text-center m-0">20% <span class="off-text position-relative">OFF</span></h1>
-                        <h2 class="text-blue fw-bold text-center">3 Days : 22 hrs left</h2>
+            <div class="promo-card-wrapper m-0 px-0 py-3 rounded-4 bg-dark">
+                <div class="promo-card bg-light p-2 p-lg-5 rounded-4 d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-xl-around">
+                    <div class="promo-left-side d-flex flex-column align-items-center">
+                        <div class="promo-details">
+                            <h1 class="text-blue percent-text text-center m-0">20% <span class="off-text position-relative">OFF</span></h1>
+                            <h2 class="text-blue fw-bold text-center">3 Days : 22 hrs left</h2>
+                        </div>
+                        <button class="promo-book-btn py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap">BOOK NOW</button>
                     </div>
-                    <button class="promo-book-btn py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap">BOOK NOW</button>
-                </div>
-                <div class="promo-right-side">
-                    <img class="promo-guy img-fluid" src="{{ asset('images/Photos/Promo Guy.png') }}" alt="">
+                    <div class="promo-right-side">
+                        <img class="promo-guy img-fluid" src="{{ asset('images/Photos/Promo Guy.png') }}" alt="">
+                    </div>
                 </div>
             </div>
         </div>
