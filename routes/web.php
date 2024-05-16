@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ExportFormController;
+use App\Http\Controllers\FormResponseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManageAccountController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,7 @@ Route::get('/manage_account', [ManageAccountController::class, 'index'])->middle
 
 
 //Export Form
-Route::get('/export_form', [ExportFormController::class, 'index'])->middleware(['auth'])->name('exportForm');
+Route::get('/export_form', [FormResponseController::class, 'index'])->middleware(['auth'])->name('formResponse');
 
 
 //logout

@@ -20,10 +20,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12 ">
             <div class="main-container">
-                <div class="container-header"><span>Manage Accounts</span></div>
+                <div class="container-header"><span>Forms</span></div>
                 <div class="container-body">
                     <div>
-                        <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate Account</button>
+                        <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate File</button>
                     </div>
                     <div class="table-responsive">
                         <table class="myTable" >
@@ -31,10 +31,9 @@
                                 <tr>
                                     <th>Full Name</th>
                                     <th>Email</th>
-                                    <th>Created By</th>
+                                    <th>Message</th>
+                                    <th>IP Address</th>
                                     <th>Created Date</th>
-                                    <th>Updated By</th>
-                                    <th>Updated Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -42,14 +41,10 @@
                                 <tr>
                                     <td>Placement 1</td>
                                     <td>gab.quing29@gmail.com</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>Gabriel Quing</td>
+                                    <td>test test test</td>
+                                    <td>158.62.17.160</td>
                                     <td>May 16 2024</td>
                                     <td class="d-flex u-gap-10">
-                                        <button class="u-action-btn u-bg-primary">
-                                            Edit
-                                        </button>
                                         <button class="u-action-btn u-bg-danger">
                                             Delete
                                         </button>

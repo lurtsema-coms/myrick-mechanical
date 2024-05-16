@@ -27,14 +27,20 @@
     body{
         background: #F5F6FA;
     }
+    .navbar {
+        padding: 1.5rem;
+    }
+    .navbar-brand{
+        font-size: 18px;
+    }
     .dropdown-menu{
         background-color: #3873c5 !important;
     }
-    .navbar-toggler-icon,
+
     .navbar-toggler,
     .nav-item a,
     .navbar a{
-        color: white;
+        color: white !important;
     }
     .nav-item a,
     .navbar a:hover {
@@ -45,11 +51,11 @@
     }
     .navbar-nav a{
         text-decoration: none;
+        font-size: 16px
     }
     .navbar-nav span {
         position: relative;
     }
-    
     .navbar-nav span::after {
         content: "";
         position: absolute;
@@ -63,16 +69,20 @@
     .navbar-nav span:hover::after {
         width: 100%; /* Expand the width on hover */
     }
-
     .navbar-nav.active-nav span::after {
         width: 100%;
     }
-
     .dropdown-menu a{
         padding-left: 10px
     }
     .dropdown-menu a:hover{
         background: rgba(0, 0, 0, 0.103) !important;
+    }
+
+    @media (max-width: 767px) {
+        .navbar-nav span{
+            margin-left: 0px !important; 
+        }
     }
 
 </style>
@@ -84,14 +94,15 @@
                     <div><span class="material-icons">grid_view</span></div>
                     <span class="ps-1">View Home Page</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="border: 2px solid white;">
+                    <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);" aria-hidden="true"></span>
                 </button>
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav {{ Request::is('home') ? ' active-nav' : '' }} me-auto">
                         <a class=" d-flex " href="{{ route('home')}}">
-                            <span class=" u-ml-80">Dashboard</span>
+                        <span class=" u-ml-80">Dashboard</span>
                         </a>
                     </ul>
                     <ul class="navbar-nav {{ Request::is('manage_account') ? ' active-nav' : '' }} me-auto">
@@ -99,9 +110,9 @@
                             <span class=" u-ml-80">Manage Accounts</span>
                         </a>
                     </ul>
-                    <ul class="navbar-nav {{ Request::is('export_form') ? ' active-nav' : '' }} me-auto">
-                        <a class=" d-flex " href="{{route('exportForm')}}">
-                            <span class=" u-ml-80">Export Form</span>
+                    <ul class="navbar-nav {{ Request::is('form_response') ? ' active-nav' : '' }} me-auto">
+                        <a class=" d-flex " href="{{route('formResponse')}}">
+                            <span class=" u-ml-80">Form Response</span>
                         </a>
                     </ul>
                     <!-- Right Side Of Navbar -->
