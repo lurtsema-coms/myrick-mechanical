@@ -21,18 +21,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/form_response', [FormResponseController::class, 'storeFormResponse'])->name('formResponse.store');
 Auth::routes();
 
-//Home
-Route::get('/home', [HomeController::class, 'index'])->middleware(['auth'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    //Home
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-//Manage Account
-Route::get('/manage_account', [ManageAccountController::class, 'index'])->middleware(['auth'])->name('manageAccount');
+    //Manage Account
+    Route::get('/manage_account', [ManageAccountController::class, 'index'])->name('manageAccount');
 
 
-//Export Form
-Route::get('/export_form', [FormResponseController::class, 'index'])->middleware(['auth'])->name('formResponse');
-
+    //Form Response
+    Route::get('/form_response', [FormResponseController::class, 'index'])->name('formResponse');
+});
 
 //logout
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
