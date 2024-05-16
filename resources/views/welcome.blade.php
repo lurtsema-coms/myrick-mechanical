@@ -6,12 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Myrick Mechanical</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body class="position-relative">
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show position-absolute top-0" role="alert">
+        <span class="fw-semibold text-dark">Thank you for contacting us!</span class="fw-semibold"> We'll get back to you as soon as possible.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
     <section class="hero-section d-flex flex-column align-item-center justify-content-center position-relative">
         <div class="video-background">
             <video autoplay muted loop>
@@ -257,16 +264,17 @@
                     <button class="text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">(913) 713-3734</button>
                 </div>
                 <div class="contact-right-side col">
-                    <form action="" class="d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-2">
+                    <form action="{{ route('formResponse.store') }}" method="POST" class="d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-2">
+                        @csrf
                         <h3 class="text-center">Contact Form</h3>
                         <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
-                            <input class="contact-form-input rounded w-100 p-2" type="text" placeholder="Name">
+                            <input class="contact-form-input rounded w-100 p-2" name="name" type="text" placeholder="Name">
                         </div>
                         <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
-                            <input class="contact-form-input rounded w-100 p-2" type="email" placeholder="Email">
+                            <input class="contact-form-input rounded w-100 p-2" name="email" type="email" placeholder="Email">
                         </div>
                         <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
-                            <textarea class="contact-form-input rounded w-100 p-2" name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                            <textarea class="contact-form-input rounded w-100 p-2" name="message" name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
                         </div>
                         <button class="button-action text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Send</button>
                     </form>
