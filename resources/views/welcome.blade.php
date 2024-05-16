@@ -277,12 +277,15 @@
     </section>
     <section class="footer">
         <div class="section-wrapper mx-3 mt-3 mx-md-5 mt-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
-            <div class="partners row row-cols-1 row-cols-xl-5 gap-3">
+            <div class="partners row row-cols-1 row-cols-xl-6 gap-3">
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
                     <img class="img-fluid" src="{{ asset('images/Partners/WGeo.png') }}" alt="">
                 </div>
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
                     <img class="img-fluid" src="{{ asset('images/Partners/Kwik.png') }}" alt="">
+                </div>
+                <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
+                    <img class="img-fluid" src="{{ asset('images/Partners/Pipefitters LU.png') }}" alt="">
                 </div>
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
                     <img class="img-fluid" src="{{ asset('images/Partners/Ruud.png') }}" alt="">
