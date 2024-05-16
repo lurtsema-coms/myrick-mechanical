@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy_policy');
+
 Route::post('/form_response', [FormResponseController::class, 'storeFormResponse'])->name('formResponse.store');
 Auth::routes();
 

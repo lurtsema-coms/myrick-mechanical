@@ -14,7 +14,7 @@
 </head>
 <body class="position-relative">
     @if(session('success'))
-    <div class="alert alert-success alert-dismissible fade show position-absolute top-0" role="alert">
+    <div class="alert alert-success alert-dismissible fade show position-absolute top-0 w-100" role="alert">
         <span class="fw-semibold text-dark">Thank you for contacting us!</span class="fw-semibold"> We'll get back to you as soon as possible.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
@@ -290,7 +290,7 @@
 
         </div>
     </section>
-    <section class="footer">
+    <section class="footer" style="margin-top: 20rem">
         <div class="section-wrapper mx-3 mt-3 mx-md-5 mt-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <div class="partners row row-cols-1 row-cols-xl-6 gap-3">
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
@@ -314,7 +314,7 @@
                 <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Ig.png') }}" alt=""></a>
                 <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Tik.png') }}" alt=""></a>
             </div>
-            <p class="text-center text-blue mt-2">Myrick Mechanical LLC | All Rights Reserved</p>
+            <p class="text-center text-blue mt-2"> <a class="text-blue" href="{{ url('/') }}">Myrick Mechanical LLC | All Rights Reserved</a> | <a class="text-blue" href="{{ route('privacy_policy') }}">Privacy Policy | Terms</a></p>
         </div>
     </section>
     <img class="gear-bg w-100 position-absolute" src="{{asset('images/Elements/Footer Gear 2.svg')}}" alt="">
