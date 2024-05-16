@@ -169,16 +169,16 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="{{ asset('images/Photos/photos from old web (2).webp') }}" />
+                        <img class="rounded rounded-lg-4" src="{{ asset('images/Photos/photos from old web (2).webp') }}" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{ asset('images/Photos/photos from old web (3).webp') }}" />
+                        <img class="rounded rounded-lg-4" src="{{ asset('images/Photos/photos from old web (3).webp') }}" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{ asset('images/Photos/photos from old web (4).webp') }}" />
+                        <img class="rounded rounded-lg-4" src="{{ asset('images/Photos/photos from old web (4).webp') }}" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{ asset('images/Photos/photos from old web (5).webp') }}" />
+                        <img class="rounded rounded-lg-4" src="{{ asset('images/Photos/photos from old web (5).webp') }}" />
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
