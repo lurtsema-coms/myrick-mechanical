@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body class="position-relative">
@@ -196,9 +197,7 @@
                     <div class="swiper-slide">
                         <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
                             <div class="testimonial-card h-100 p-1 p-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
-                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
-                                </div>
+                                <i class="material-icons fs-1 text-white bg-blue rounded-circle p-2">person</i>
                                 <h5 class="customer-name text-dark fw-semibold">Stacy V.</h5>
                                 <p class="stars text-warning">★★★★★</p>
                                 <p class="text-dark text-center fs-6 lh-sm">
@@ -210,9 +209,7 @@
                     <div class="swiper-slide">
                         <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
                             <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
-                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
-                                </div>
+                                <i class="material-icons fs-1 text-white bg-blue rounded-circle p-2">person</i>
                                 <h5 class="customer-name text-dark fw-semibold">Nancy H.</h5>
                                 <p class="stars text-warning">★★★★★</p>
                                 <p class="text-dark text-center fs-6 lh-sm">
@@ -224,9 +221,7 @@
                     <div class="swiper-slide">
                         <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
                             <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <div class="customer-photo rounded-circle" style="height: 5rem; width: 5rem; background: blue;">
-                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('images/Testimonials/Testimonial-1.png') }}" alt=""> --}}
-                                </div>
+                                <i class="material-icons fs-1 text-white bg-blue rounded-circle p-2">person</i>
                                 <h5 class="customer-name text-dark fw-semibold">Stephanie S.</h5>
                                 <p class="stars text-warning">★★★★★</p>
                                 <p class="text-dark text-center fs-6 lh-sm">
