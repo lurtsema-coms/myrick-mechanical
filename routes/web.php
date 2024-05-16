@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
 
     //Manage Account
     Route::get('/manage_account', [ManageAccountController::class, 'index'])->name('manageAccount');
-
+    Route::post('/manage_account', [ManageAccountController::class, 'add'])->name('add_user');
 
     //Form Response
     Route::get('/form_response', [FormResponseController::class, 'index'])->name('formResponse');
