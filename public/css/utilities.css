@@ -516,6 +516,12 @@
     font-size: 1rem;
 }
 
+.add_user_success {
+    margin-top: 14px;
+    font-size: 14px;
+    color: green;
+}
+
 /* Action Btns */
 .action-btn {
     height: 2rem;

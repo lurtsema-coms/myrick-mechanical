@@ -4,9 +4,6 @@
 <style>
 
 
-    .modal-box{
-        max-width: 75rem !important;
-    }
 
 
     input::file-selector-button {
@@ -36,6 +33,8 @@
                                 <p>Image Name:</p>
                                 <input class="u-input" name="image_name" type="text" required>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <p>Add Placement</p>
                                 <select class="u-input" name="add_placement" id="" required>
