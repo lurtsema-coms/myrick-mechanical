@@ -98,11 +98,13 @@ body {
   max-height: 170px;
 }
 
-.percent-text {
-  /* font-size: 7rem; */
-  font-size: clamp(3.2rem, 0.5692rem + 9vw, 8rem);
+.contact-us-today {
+  line-height: 2rem;
+}
+
+.cash-value {
+  font-size: 5rem;
   font-weight: 900;
-  line-height: 7rem;
 }
 
 .off-text {

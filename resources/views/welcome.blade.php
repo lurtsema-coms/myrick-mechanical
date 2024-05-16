@@ -56,17 +56,24 @@
     <section id="promo-section" class="promo-section">
         <div class="section-wrapper m-3 m-sm-5">
             <div class="promo-card-wrapper m-0 px-0 py-3 rounded-4 bg-dark">
-                <div class="promo-card bg-light p-2 p-lg-5 rounded-4 d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-xl-around">
-                    <div class="promo-left-side d-flex flex-column align-items-center">
-                        <div class="promo-details">
-                            <h1 class="text-blue percent-text text-center m-0">20% <span class="off-text position-relative">OFF</span></h1>
-                            <h2 class="text-blue fw-bold text-center">3 Days : 22 hrs left</h2>
+                <div class="promo-card bg-light py-2 px-3 rounded-4 d-flex flex-column">
+                    <div class="d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-xl-around">
+                        <div class="promo-left-side d-flex flex-column align-items-center">
+                            <div class="promo-details">
+                                <h2 class="contact-us-today fw-semibold text-blue text-center m-0">Contact us today <br/><span class="fw-bold text-blue fs-1">and receive a</span></h2>
+                                <div class="voucher-card my-3 bg-blue rounded-3 p-3 d-flex flex-column">
+                                    <h1 class="cash-value text-center">$200</h1>
+                                    <h2 class="text-center fw-semibold">Restaurant Cash<br/>Value Voucher.</h2>
+                                </div>
+                            </div>
+                            <a href="#contact-us-section" class="button-action promo-book-btn text-light py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap text-decoration-none">CONTACT</a>
                         </div>
-                        <a href="#contact-us-section" class="button-action promo-book-btn text-light py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap text-decoration-none">BOOK NOW</a>
+                        <div class="promo-right-side">
+                            <img class="promo-guy img-fluid" src="{{ asset('images/Photos/Promo Guy.png') }}" alt="">
+                        </div>
+
                     </div>
-                    <div class="promo-right-side">
-                        <img class="promo-guy img-fluid" src="{{ asset('images/Photos/Promo Guy.png') }}" alt="">
-                    </div>
+                    <p class="text-center text-blue mt-3 fw-semibold fst-italic">For over 80,000 participating restaurants worldwide</p>
                 </div>
             </div>
         </div>
