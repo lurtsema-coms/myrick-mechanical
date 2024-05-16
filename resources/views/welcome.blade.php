@@ -163,7 +163,7 @@
             <a href="#" class="button-action text-blue bg-light text-decoration-none fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Learn More</a>
         </div>
     </section>
-    <section id="our-works-section" class="our-works-section">
+    <section id="our-works-section" class="our-works-section py-lg-5">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold mb-3">OUR WORKS</h1>
             <div class="swiper">
@@ -342,6 +342,22 @@
 
     $('.navbar-ul a').on('click', function() {
         $('.navbar-ul').slideToggle();
+    });
+
+    let lastScrollTop = $(window).height() + $('.navbar-list').height();
+    console.log(lastScrollTop);
+
+    $(window).scroll(function(event){
+        const windowWidth = $(window).width();
+        if (windowWidth >= 992) {
+            let st = $(window).height() + $('.navbar-list').height() + $(this).scrollTop();
+            if (st > lastScrollTop){
+                $('.navbar-list').css('transform', 'translateY(-100%)');
+            } else {
+                $('.navbar-list').css('transform', 'translateY(0)');
+            }
+            lastScrollTop = st;
+        }
     });
   </script>
 </body>
