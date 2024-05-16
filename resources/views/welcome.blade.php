@@ -349,7 +349,8 @@
 
     $(window).scroll(function(event){
         const windowWidth = $(window).width();
-        if (windowWidth >= 992) {
+        const isVisible = checkVisibility();
+        if (windowWidth >= 992 && !isVisible) {
             let st = $(window).height() + $('.navbar-list').height() + $(this).scrollTop();
             if (st > lastScrollTop){
                 $('.navbar-list').css('transform', 'translateY(-100%)');
@@ -359,6 +360,39 @@
             lastScrollTop = st;
         }
     });
+
+    function checkVisibility() {
+            var $box = $('.hero-section');
+            var $window = $(window);
+
+            var viewportTop = $window.scrollTop();
+            var viewportBottom = viewportTop + $window.height();
+
+            var boxTop = $box.offset().top;
+            var boxBottom = boxTop + $box.height();
+            return boxBottom > viewportTop && boxTop < viewportBottom;
+
+            if (boxBottom > viewportTop && boxTop < viewportBottom) {
+                $('#visibilityStatus').text('visible');
+            } else {
+                $('#visibilityStatus').text('not visible');
+            }
+        }
+
+        $(document).ready(function() {
+            // Check visibility when the page loads
+            checkVisibility();
+
+            // Check visibility when the user scrolls
+            $(window).scroll(function() {
+                checkVisibility();
+            });
+
+            // Check visibility when the window is resized
+            $(window).resize(function() {
+                checkVisibility();
+            });
+        });
   </script>
 </body>
 </html>
