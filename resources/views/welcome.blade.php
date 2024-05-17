@@ -334,7 +334,7 @@
         //         }
         //         lastScrollTop = st;
         //     }
-        // });
+        });
 
         function checkVisibility() {
             const $box = $('.hero-section');
