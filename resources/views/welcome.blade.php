@@ -259,7 +259,7 @@
                     <button class="text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">(913) 713-3734</button>
                 </div>
                 <div class="contact-right-side col">
-                    <form action="{{ route('formResponse.store') }}" method="POST" class="d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-2">
+                    <form action="{{ route('formResponse.store') }}" method="POST" class="d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-2" autocomplete="off">
                         @csrf
                         <h3 class="text-center">Contact Form</h3>
                         <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
