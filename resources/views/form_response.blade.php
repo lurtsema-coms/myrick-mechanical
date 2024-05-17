@@ -16,6 +16,100 @@
 @endsection
 
 @section('content')
+
+<div class="modal-center generate-file" style="display:none">
+    <div class="modal-box">
+        <div class="modal-content">
+            <form action="" method="POST" autocomplete="off">
+                @csrf
+                <table class="custom_normal_table">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <h3 class="f-weight-bold">Generate Export File</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>From Date:</p>
+                                <input class="u-input" name="from_date" type="date" required>
+                            </td>
+                            <td>
+                                <p>To Date:</p>
+                                <input class="u-input" name="to_date" type="date" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Email</p>
+                                <select class="js-example-basic-single s-single multiple-select" name="form_responses_id[]" id="form_responses_id" multiple="multiple" required >
+                                    <option selected value="">Select All</option>
+                                    <option value="">test</option>
+                                    <option value="">test</option>
+                                </select>    
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <div class="u-flex-space-between u-flex-wrap">
+                    <button class="u-t-gray-dark u-fw-b u-btn u-bg-default u-m-10 u-border-1-default btn-close-add" id="btn-close-add" type="button">Close</button>
+                    <button class="u-t-white u-fw-b u-btn u-bg-primary u-m-10 u-border-1-default btn-submit-add" id="btn-submit-add" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal-center view-file" style="display:none">
+    <div class="modal-box">
+        <div class="modal-content">
+            <form action="" method="POST" autocomplete="off">
+                @csrf
+                <table class="custom_normal_table">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <h3 class="f-weight-bold">View Details</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Full Name:</p>
+                                <input class="u-input" id="view_name" name="full_name" type="text" readonly>
+                            </td>
+                            <td>
+                                <p>Email:</p>
+                                <input class="u-input" id="view_email" name="email" type="text" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ip Address:</p>
+                                <input class="u-input" id="view_ip_address" name="ip_address" type="text" readonly>
+                            </td>
+                            <td>
+                                <p>User Agent:</p>
+                                <input class="u-input" id="view_user_agent" name="user_agent" type="text" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p>Message:</p>
+                                <textarea class="u-textarea" id="view_message" name="message" type="text" style="height:150px" readonly></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <div class="u-flex-space-between u-flex-wrap">
+                    <button class="u-t-gray-dark u-fw-b u-btn u-bg-default u-m-10 u-border-1-default btn-close-view" type="button">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="container ">
     <div class="row justify-content-center">
         <div class="col-md-12 ">
@@ -50,7 +144,7 @@
                                         <td>{{date('M d Y h:i a', strtotime($form->created_at))}}</td>
                                         <td>{{date('M d Y h:i a', strtotime($form->updated_at))}}</td>
                                         <td class="d-flex u-gap-10">
-                                            <button class="u-action-btn  u-bg-primary">
+                                            <button class="u-action-btn u-bg-primary view-modal" type="button"  data-entry-id="{{ $form->id }}" data-href="{{ route('viewResponse', $form->id) }}">
                                                 View
                                             </button>
                                             <button class="u-action-btn u-bg-danger">
@@ -67,4 +161,52 @@
         </div>
     </div>
 </div>
+    @section('script_content')
+        <script>
+
+            $(document).ready(function(){
+                $('.s-single').select2({
+                    width: '100%',
+                });
+                
+                $('.btn-close-add').on('click', function(){
+                    $('.generate-file').hide();
+                });
+                $('.btn-close-view').on('click', function(){
+                    $('.view-file').hide();
+                });
+                $('.btn-open-add').on('click', function(){
+                    $('.generate-file').show();
+                    console.log('tyest');
+                });
+
+                $('.view-modal').click(function(e){
+                    const entryId = $(this).data('entry-id');
+                    const url = $(this).attr('href');
+                    let editUrl = "{{ route('viewResponse', 'entryId') }}";
+                    const newUrl = editUrl.replace('entryId', entryId);
+                    $.ajax({
+                        url: newUrl,   
+                            dataType: 'json',
+                            type: 'GET',
+                            success: function(response) {
+                                console.log(response);
+                                $('#view_name').val(response.name);
+                                $('#view_email').val(response.email);
+                                $('#view_ip_address').val(response.ip_address);
+                                $('#view_user_agent').val(response.user_agent);
+                                $('#view_message').val(response.message);
+                                $('.view-file').show();
+
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                    });
+                });
+            });
+
+
+        </script>
+    @endsection
 @endsection

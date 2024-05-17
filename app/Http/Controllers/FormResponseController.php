@@ -33,4 +33,11 @@ class FormResponseController extends Controller
 
         return redirect()->back()->with('success', 'form-response-success');
     }
+
+    public function view ($id){
+        $Response = FormResponse::where('id',$id)
+        ->first();
+
+        return $Response;
+    }
 }
