@@ -221,7 +221,7 @@ body {
 }
 
 .footer {
-  padding-top: clamp(3.2rem, 1rem + 92vw, 15rem) !important; 
+  padding-top: clamp(2rem, 1rem + 92vw, 15rem) !important; 
 }
 
 .social-media-link {
@@ -261,6 +261,14 @@ body {
 @media screen and (max-width: 992px) {
   :root{
     font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    background-color: #ffffff;
+    padding-top: 3rem !important;
+    margin-top: 5rem;;
   }
 }
 

@@ -17,9 +17,9 @@
 </head>
 <body class="position-relative">
     @yield('content')
-    <section class="footer" style="margin-top: 20rem">
+    <section class="footer">
         <div class="section-wrapper mx-3 mt-3 mx-md-5 mt-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
-            <div class="partners row row-cols-1 row-cols-xl-6 gap-3">
+            <div class="partners row row-cols-1 row-cols-md-4 row-cols-xl-6 gap-3">
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
                     <img class="img-fluid" src="{{ asset('images/Partners/WGeo.png') }}" alt="">
                 </div>
@@ -36,15 +36,15 @@
                     <img class="img-fluid" src="{{ asset('images/Partners/Evergy.png') }}" alt="">
                 </div>
             </div>
-            <div class="social-media d-flex justify-content-center align-items-center gap-3 mt-5">
+            {{-- <div class="social-media d-flex justify-content-center align-items-center gap-3 mt-5">
                 <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Fb.png') }}" alt=""></a>
                 <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Ig.png') }}" alt=""></a>
                 <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Tik.png') }}" alt=""></a>
-            </div>
+            </div> --}}
             <p class="text-center text-blue mt-2"> <a class="text-blue" href="{{ url('/') }}">Myrick Mechanical LLC | All Rights Reserved</a> | <a class="text-blue" href="{{ route('privacy_policy') }}">Privacy Policy | Terms</a></p>
         </div>
     </section>
-    <img class="gear-bg w-100 position-absolute" src="{{asset('images/Elements/Footer Gear 2.svg')}}" alt="">
+    <img class="gear-bg w-100 position-absolute d-none d-md-block" src="{{asset('images/Elements/Footer Gear 2.svg')}}" alt="">
     @yield('script_content')
 </body>
 </html>

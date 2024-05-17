@@ -54,7 +54,7 @@
                                     <h2 class="text-center fw-semibold">Restaurant Cash<br/>Value Voucher.</h2>
                                 </div>
                             </div>
-                            <a href="#contact-us-section" class="button-action promo-book-btn text-light py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap text-decoration-none">CONTACT</a>
+                            <a href="#contact-us-section" class="button-action promo-book-btn text-light py-2 px-3 px-sm-5 fs-1 fw-bolder rounded-pill border-0 text-nowrap text-decoration-none">GIVE US A CALL</a>
                         </div>
                         <div class="promo-right-side">
                             <img class="promo-guy img-fluid" src="{{ asset('images/Photos/Promo Guy.png') }}" alt="">
@@ -163,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="button-action text-blue bg-light text-decoration-none fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Learn More</a>
+            <a href="#" class="button-action text-blue bg-light text-decoration-none fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">LEARN MORE</a>
         </div>
     </section>
     <section id="our-works-section" class="our-works-section py-lg-5">
@@ -271,7 +271,7 @@
                         <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
                             <textarea class="contact-form-input rounded w-100 p-2" name="message" name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
                         </div>
-                        <button class="button-action text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">Send</button>
+                        <button class="button-action text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">SEND</button>
                     </form>
                 </div>
             </div>
