@@ -683,7 +683,7 @@
 .myTable{
     border-collapse: collapse;
     width: 100%;
-    max-width: 1000px; 
+    max-width: 1200px; 
     margin: auto;
     margin-top: 2rem;
     border-radius: 5px 5px 0px 0px;
@@ -724,7 +724,12 @@
     margin-top: 20px; 
 }
 
-
+.text-truncate {
+    max-width: 200px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
 /* Myrick login page */

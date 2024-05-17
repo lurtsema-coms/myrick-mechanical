@@ -9,7 +9,10 @@ class FormResponseController extends Controller
 {
     public function index()
     {
-        return view('form_response');
+        $data['forms'] = FormResponse::whereNull('deleted_at')
+            ->get();
+
+        return view('form_response', $data);
     }
 
     public function storeFormResponse(Request $request)

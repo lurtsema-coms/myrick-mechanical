@@ -33,23 +33,32 @@
                                     <th>Email</th>
                                     <th>Message</th>
                                     <th>IP Address</th>
+                                    <th>User Agent</th>
                                     <th>Created Date</th>
+                                    <th>Updated Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Placement 1</td>
-                                    <td>gab.quing29@gmail.com</td>
-                                    <td>test test test</td>
-                                    <td>158.62.17.160</td>
-                                    <td>May 16 2024</td>
-                                    <td class="d-flex u-gap-10">
-                                        <button class="u-action-btn u-bg-danger">
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
+                                @foreach ($forms as $form)
+                                    <tr>
+                                        <td>{{$form->name}}</td>
+                                        <td>{{$form->email}}</td>
+                                        <td class="text-truncate">{{$form->message}}</td>
+                                        <td>{{$form->ip_address}}</td>
+                                        <td class="text-truncate">{{$form->user_agent}}</td>
+                                        <td>{{date('M d Y h:i a', strtotime($form->created_at))}}</td>
+                                        <td>{{date('M d Y h:i a', strtotime($form->updated_at))}}</td>
+                                        <td class="d-flex u-gap-10">
+                                            <button class="u-action-btn  u-bg-primary">
+                                                View
+                                            </button>
+                                            <button class="u-action-btn u-bg-danger">
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
