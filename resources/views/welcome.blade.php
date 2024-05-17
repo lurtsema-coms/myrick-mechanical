@@ -259,20 +259,28 @@
                     <button class="text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">(913) 713-3734</button>
                 </div>
                 <div class="contact-right-side col">
-                    <form action="{{ route('formResponse.store') }}" method="POST" class="d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-2" autocomplete="off">
-                        @csrf
-                        <h3 class="text-center">Contact Form</h3>
-                        <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
-                            <input class="contact-form-input rounded w-100 p-2" name="name" type="text" placeholder="Name" required>
-                        </div>
-                        <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
-                            <input class="contact-form-input rounded w-100 p-2" name="email" type="email" placeholder="Email" required>
-                        </div>
-                        <div class="contact-input-wrapper w-100 px-0 py-1 rounded">
-                            <textarea class="contact-form-input rounded w-100 p-2" name="message" name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
-                        </div>
-                        <button class="button-action text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">SEND</button>
-                    </form>
+                    <h3 class="text-center">Contact Form</h3>
+                    <iframe
+                        src="
+                        https://api.leadconnectorhq.com/widget/form/oZFky6ro0teiH10GBdRQ"
+                        style="width:100%;height:100%;border:none;border-radius:3px"
+                        id="inline-oZFky6ro0teiH10GBdRQ" 
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="$200 Restaurant - Certificate"
+                        data-height="575"
+                        data-layout-iframe-id="inline-oZFky6ro0teiH10GBdRQ"
+                        data-form-id="oZFky6ro0teiH10GBdRQ"
+                        title="$200 Restaurant - Certificate"
+                        >
+                        </iframe>
+                        <script src="
+                        https://link.msgsndr.com/js/form_embed.js"></script>
                 </div>
             </div>
 
