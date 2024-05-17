@@ -5,6 +5,10 @@
   --primary-blue: #313d94;
 }
 
+html {
+  scroll-padding-top: 20rem;
+}
+
 * {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
