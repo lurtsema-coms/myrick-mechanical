@@ -221,7 +221,7 @@ body {
 }
 
 .footer {
-  padding-top: clamp(2rem, 1rem + 92vw, 15rem) !important; 
+  padding-top: clamp(2rem, 0.88rem + 50vw, 30rem) !important; 
 }
 
 .social-media-link {
