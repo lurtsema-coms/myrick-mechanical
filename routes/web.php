@@ -38,6 +38,8 @@ Route::middleware(['auth'])->group(function () {
 
     //Form Response
     Route::get('/form_response', [FormResponseController::class, 'index'])->name('formResponse');
+    Route::get('/form_response/{id}/view', [FormResponseController::class, 'view'])->name('viewResponse');
+
 });
 
 //logout
