@@ -323,18 +323,18 @@
         console.log(lastScrollTop);
 
         $(window).scroll(function(event){
-            const windowWidth = $(window).width();
-            const isVisible = checkVisibility();
-            if (windowWidth >= 992 && !isVisible) {
-                let st = $(window).height() + $('.navbar-list').height() + $(this).scrollTop();
-                if (st > lastScrollTop){
-                    $('.navbar-list').css('transform', 'translateY(-100%)');
-                } else {
-                    $('.navbar-list').css('transform', 'translateY(0)');
-                }
-                lastScrollTop = st;
-            }
-        });
+        //     const windowWidth = $(window).width();
+        //     const isVisible = checkVisibility();
+        //     if (windowWidth >= 992 && !isVisible) {
+        //         let st = $(window).height() + $('.navbar-list').height() + $(this).scrollTop();
+        //         if (st > lastScrollTop){
+        //             $('.navbar-list').css('transform', 'translateY(-100%)');
+        //         } else {
+        //             $('.navbar-list').css('transform', 'translateY(0)');
+        //         }
+        //         lastScrollTop = st;
+        //     }
+        // });
 
         function checkVisibility() {
             const $box = $('.hero-section');
