@@ -5,10 +5,6 @@
   --primary-blue: #313d94;
 }
 
-html {
-  scroll-padding-top: 20rem;
-}
-
 * {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -273,6 +269,10 @@ body {
     background-color: #ffffff;
     padding-top: 3rem !important;
     margin-top: 5rem;;
+  }
+
+  html {
+    scroll-padding-top: 20rem;
   }
 }
 
