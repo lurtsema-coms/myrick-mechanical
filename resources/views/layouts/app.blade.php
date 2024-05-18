@@ -94,7 +94,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex u-mr-16 " href="{{ url('/') }}">
                     <div><span class="material-icons">grid_view</span></div>
-                    <span class="ps-1">View Home Page</span>
+                    <span class="ps-1 u-pr-80">View Home Page</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="border: 2px solid white;">
                     <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);" aria-hidden="true"></span>
@@ -112,11 +112,11 @@
                             <span class=" u-ml-80">Manage Accounts</span>
                         </a>
                     </ul>
-                    <ul class="navbar-nav {{ Request::is('form_response') ? ' active-nav' : '' }} me-auto">
+                    {{-- <ul class="navbar-nav {{ Request::is('form_response') ? ' active-nav' : '' }} me-auto">
                         <a class=" d-flex " href="{{route('formResponse')}}">
                             <span class=" u-ml-80">Form Response</span>
                         </a>
-                    </ul>
+                    </ul> --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
