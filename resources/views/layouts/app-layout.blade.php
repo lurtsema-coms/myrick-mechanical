@@ -17,6 +17,10 @@
     @yield('styles')
 </head>
 <body class="position-relative">
+    <section class="gauge-section position-fixed" style="display: none;">
+        <img class="gauge-pointer img-fluid w-100 position-absolute left-0" src="{{ asset('images/Gauge/Realistic Pointer.png') }}" alt="">
+        <img class="gauge-base img-fluid w-100" src="{{ asset('images/Gauge/Realistic Base.png') }}" alt="">
+    </section>
     @yield('content')
     <section class="footer">
         <div class="section-wrapper mx-3 mt-3 mx-md-5 mt-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">

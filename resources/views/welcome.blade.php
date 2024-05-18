@@ -327,10 +327,19 @@
             $('.navbar-ul').slideToggle();
         });
 
+        let timeout;
         let lastScrollTop = $(window).height() + $('.navbar-list').height();
-        console.log(lastScrollTop);
 
-        $(window).scroll(function(event){
+        $(window).scroll(function(event) {
+
+            $('.gauge-section').stop(true, true).fadeIn();
+            
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                $('.gauge-section').stop(true, true).fadeOut();
+            }, 1000); 
+
+
         //     const windowWidth = $(window).width();
         //     const isVisible = checkVisibility();
         //     if (windowWidth >= 992 && !isVisible) {

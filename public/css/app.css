@@ -243,6 +243,25 @@ body {
   width: auto;
 }
 
+/* gauge */
+.gauge-section {
+  min-width: 100px;
+  max-width: 10%;
+  z-index: 999;
+  bottom: 1rem;
+}
+
+.gauge-section .gauge-pointer {
+  transform: rotate(-135deg);
+  transform-origin: 52% 50%;
+  animation: scroll-gauge linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-gauge {
+  to { transform: rotate(135deg); }
+}
+
 
 /* swiper */
 .swiper {
