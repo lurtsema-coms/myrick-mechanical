@@ -14,9 +14,13 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('/img/logo.png') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/utilities.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sideNav.css') }}">
+
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -71,9 +75,6 @@
     .navbar-nav span:hover::after {
         width: 100%; /* Expand the width on hover */
     }
-    .navbar-nav.active-nav span::after {
-        width: 100%;
-    }
     .dropdown-menu a{
         padding-left: 10px
     }
@@ -89,79 +90,102 @@
 
 </style>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm background-container-gradient" >
-            <div class="container">
-                <a class="navbar-brand d-flex u-mr-16 " href="{{ url('/') }}">
-                    <div><span class="material-icons">grid_view</span></div>
-                    <span class="ps-1 u-pr-80">View Home Page</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="border: 2px solid white;">
-                    <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);" aria-hidden="true"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav {{ Request::is('home') ? ' active-nav' : '' }} me-auto">
-                        <a class=" d-flex " href="{{ route('home')}}">
-                        <span class=" u-ml-80">Dashboard</span>
-                        </a>
-                    </ul>
-                    <ul class="navbar-nav {{ Request::is('manage_account') ? ' active-nav' : '' }} me-auto">
-                        <a class=" d-flex " href="{{ route('manageAccount')}}">
-                            <span class=" u-ml-80">Manage Accounts</span>
-                        </a>
-                    </ul>
-                    {{-- <ul class="navbar-nav {{ Request::is('form_response') ? ' active-nav' : '' }} me-auto">
-                        <a class=" d-flex " href="{{route('formResponse')}}">
-                            <span class=" u-ml-80">Form Response</span>
-                        </a>
-                    </ul> --}}
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown u-pr-16">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item u-p-5" href="#">
-                                        Profile
-                                    </a>
-                                    <a class="dropdown-item u-p-5" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+    <div class="toggle_top" style="display: none">
+        <i id="sidebar-menu-btn2">
+            <span class="material-symbols-outlined menu_top" style="color: #039bf4">menu</span>
+        </i>
     </div>
-    <script>
+    <div class="u-sidebar" >
+        <div class="sidebar-top">
+            <div class="sidebar-logo">
+                <img src="{{ asset('img/logo.png') }}" class="logo-img" alt="">
+            </div>
+            <i class="bx" id="sidebar-menu-btn"><span class="material-symbols-outlined">menu</span></i>
+        </div>
+        <div class="sidebar-user">
+            <img src="{{ asset('img/gab.png') }}" alt="" class="user-img">
+            <div>
+                <p class="sidebar-username">{{ Auth::user()->name }}</p>
+                <p class="sidebar-role">Admin</p>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="{{ url('/') }}">
+                    <i class="bx"><span class="material-symbols-outlined">team_dashboard</span></i>
+                    <span class="nav-item">Website</span>
+                </a>
+                <span class="tooltip">Website</span>
+            </li>
+            <li >
+                <a href="{{ route('login') }}" class="{{ Request::is('home') ? ' active-nav' : '' }}">
+                    <i class="bx"><span class="material-symbols-outlined">dashboard</span></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="{{ route('manageAccount')}}" class="{{ Request::is('manage_account') ? ' active-nav' : '' }}">
+                    <i class="bx"><span class="material-symbols-outlined">person_add</span></i>
+                    <span class="nav-item">Acounts </span>
+                </a>
+                <span class="tooltip">Manage Accounts</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx"><span class="material-symbols-outlined">manage_accounts</span></i>
+                    <span class="nav-item">Profile</span>
+                </a>
+                <span class="tooltip">My Profile</span>
+            </li>
+            <li class="logout-container">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <i class="bx"><span class="material-symbols-outlined">logout</span></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="u-topbar">
+        <div class="topbar-container">
+            <h1>Welcome To Myrick Mechanical System Access</h1>
+            <h3>Dashboard</h3>
+        </div>
+    </div>
+    <div class="u-body-content" >
+        <div>
+            @yield('content')
+        </div>
+    </div>
 
+    <script>
+        function handleResize() {
+            const sidebar = document.querySelector('.u-sidebar');
+            if (window.innerWidth <= 1099) {
+                sidebar.classList.remove('active');
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        let btn = document.querySelector('#sidebar-menu-btn')
+        let btn2 = document.querySelector('#sidebar-menu-btn2')
+        let siderbar = document.querySelector('.u-sidebar')
+    
+        btn.onclick = function (){
+            console.log("test");
+            siderbar.classList.toggle('active')
+        }
+
+        btn2.onclick = function(){
+            siderbar.classList.toggle('display-side')
+        } 
     </script>
     @yield('script_content')
 

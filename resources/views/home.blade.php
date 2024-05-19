@@ -105,40 +105,6 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Placement 1</td>
-                                    <td>Test</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>dasdsad</td>
-                                    <td class="d-flex u-gap-10">
-                                        <button class="u-action-btn u-bg-primary">
-                                            Edit
-                                        </button>
-                                        <button class="u-action-btn u-bg-danger">
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Placement 1</td>
-                                    <td>Test</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>dasdsad</td>
-                                    <td class="d-flex u-gap-10">
-                                        <button class="u-action-btn u-bg-primary">
-                                            Edit
-                                        </button>
-                                        <button class="u-action-btn u-bg-danger">
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
