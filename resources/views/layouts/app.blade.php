@@ -152,18 +152,21 @@
         </ul>
     </div>
     
-    <div class="u-topbar">
-        <div class="topbar-container">
-            <h1>Welcome To Myrick Mechanical System Access</h1>
-            <h3>Dashboard</h3>
+    <div class="main-content-wrapper">
+        <div class="main-content">
+            <div class="u-topbar">
+                <div class="topbar-container">
+                    <h1>Welcome To Myrick Mechanical System Access</h1>
+                    <h3>Dashboard</h3>
+                </div>
+            </div>
+            <div class="u-body-content">
+                <div>
+                    @yield('content')
+                </div>
+            </div>
         </div>
     </div>
-    <div class="u-body-content" >
-        <div>
-            @yield('content')
-        </div>
-    </div>
-
     <script>
         function handleResize() {
             const sidebar = document.querySelector('.u-sidebar');

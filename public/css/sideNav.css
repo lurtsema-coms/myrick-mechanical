@@ -5,7 +5,13 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html, body {
+    height: 100%;
+}
 
+body {
+    margin: 0;
+}
 /* Sidebar and related elements */
 .user-img {
     width: 50px;
@@ -21,7 +27,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 250px;
     background-color: #12171e;
     background: linear-gradient(to right, #030409, #1c2533);
@@ -176,6 +182,7 @@
 
 /* Topbar and body content */
 .u-topbar {
+    flex: 0 0 auto; /* Prevent topbar from shrinking */
     position: relative;
     background-color: #F8F8F8;
     min-height: 10vh;
@@ -203,6 +210,9 @@
     width: calc(100% - 250px);
     padding: 1rem;
     transition: all 0.5s ease;
+    height: auto;
+    flex: 1 1 auto; /* Allow body content to grow */
+
 }
 
 .u-sidebar ul {
@@ -220,19 +230,25 @@
 .u-sidebar i {
     margin-top: 10px !important;
 }
-
+.main-content-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    width: 100%;
+    height: 100%;
+}
+.main-content{
+    min-width: 100%; /* Ensure it takes at least the full width */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 /* Media query for small screens */
 @media (max-width: 1099px) {
-    #sidebar-menu-btn {
+    .u-sidebar {
         display: none;
     }
 
-    .u-sidebar {
-        display: none; /* Default state is hidden */
-    }
-
     .u-sidebar.active {
-        display: none !important; /* Ensure hidden even when active */
+        display: none !important;
     }
 
     .u-body-content {
@@ -271,26 +287,28 @@
         width: calc(100% - 250px);
         padding: 1rem;
     }
-
 }
+
 @media (max-width: 995px) {
     .u-sidebar.display-side ~ .u-topbar {
         left: 0px;
         width: 100%;
         padding: 1rem;
     }
+
     .u-sidebar.display-side ~ .u-body-content {
         left: 0px;
         width: 100%;
         padding: 1rem;
     }
-    .u-sidebar{
+
+    .u-sidebar {
         z-index: 20;
     }
 }
 
 @media (max-width: 376px) {
-    .u-sidebar ul li{
+    .u-sidebar ul li {
         margin: auto;
     }
 }

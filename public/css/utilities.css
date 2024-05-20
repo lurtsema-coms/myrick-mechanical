@@ -36,6 +36,7 @@
     --white: #fff;
     --darker: #000;
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(22rem, 1fr)); /* Change this line */
@@ -421,15 +422,23 @@
     width: 100%;
     max-width: 600px;
     background-color: #fff;
-    border-radius: 10px;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.3s ease;
+    border-radius: 10px;
+
 }
 
 .modal-content {
     display: flex;
     flex-direction: column;
     padding: 20px;
+}
+.custom_table_header{
+    font: bold;
+    font-size: 1.3rem;
+    padding: 1.0rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;    
+    background: #eef1f4;
 }
 
 .max-width-1400 {

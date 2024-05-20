@@ -24,7 +24,7 @@
                 <table class="custom_normal_table">
                     <tbody>
                         <tr>
-                            <td colspan="2">
+                            <td class="custom_table_header" colspan="2">
                                 <h3 class="f-weight-bold">Generate Account Form</h3>
                             </td>
                         </tr>
