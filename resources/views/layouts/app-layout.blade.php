@@ -41,11 +41,6 @@
                     <img class="img-fluid" src="{{ asset('images/Partners/Evergy.png') }}" alt="">
                 </div>
             </div>
-            {{-- <div class="social-media d-flex justify-content-center align-items-center gap-3 mt-5">
-                <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Fb.png') }}" alt=""></a>
-                <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Ig.png') }}" alt=""></a>
-                <a href="" class="text-decoration-none social-media-link"><img class="img-fluid" src="{{ asset('images/Icons/Tik.png') }}" alt=""></a>
-            </div> --}}
             <p class="text-center text-blue mt-2"> <a class="text-blue" href="{{ url('/') }}">Myrick Mechanical LLC | All Rights Reserved</a> | <a class="text-blue" href="{{ route('privacy_policy') }}">Privacy Policy | Terms</a></p>
         </div>
     </section>
