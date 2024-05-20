@@ -24,7 +24,7 @@
     --gray-dark: #5b5c5e;
     --light: #ced4da;
     --lighter: #f4f4f4;
-    --primary: #02718a;
+    --primary: #1A222F;
     --secondary: #f7fafc;
     --success: #2ac582;
     --info: #11cdef;
@@ -438,7 +438,7 @@
     font-size: 1.3rem;
     padding: 1.0rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;    
-    background: #eef1f4;
+    background: #EEF1F4;
 }
 
 .max-width-1400 {
