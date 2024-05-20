@@ -157,7 +157,7 @@
       </div>
     </div>
   </section>
-  <section class="terms-of-service-section" style="margin-top: 20rem">
+  <section class="terms-of-service-section" style="margin-top: 20rem; padding-bottom: 10rem;">
     <div class="container">
       <h1 class="section-title text-center fw-bold">TERMS OF SERVICE</h1>
       <div class="section-content mt-5">
