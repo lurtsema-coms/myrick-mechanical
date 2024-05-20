@@ -3,8 +3,9 @@
 @section('styles')
 <style>
 
-
-
+    .modal-box{
+            max-width: 75rem !important;
+        }
 
     input::file-selector-button {
         margin-top:4px;
@@ -16,7 +17,7 @@
 @section('content')
 
 
-<div class="modal-center generate-add" style="display:none">
+{{-- <div class="modal-center generate-add" style="display:none">
     <div class="modal-box">
         <div class="modal-content">
             <form method="POST" action="" enctype="multipart/form-data">
@@ -33,18 +34,24 @@
                                 <p>Image Name:</p>
                                 <input class="u-input" name="image_name" type="text" required>
                             </td>
-                        </tr>
-                        <tr>
                             <td>
                                 <p>Add Placement</p>
                                 <select class="u-input" name="add_placement" id="" required>
+                                    <option value="">Placement 1</option>
+                                    <option value=""> Placement 2</option>
+                                    <option value="">Placement 3</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p>Upload Add</p>
-                                <input class="u-input" id="add_image" name="add_image" type="file" accept=".pdf" required>
+                                <input class="u-input" id="add_image" name="add_image" type="file" required>
+                                
+                            </td>
+                            <td>
+                                <p>Redirect Link:</p>
+                                <input class="u-input" id="re_link" name="re_link" type="text"  required>
                             </td>
                         </tr>
                     </tbody>
@@ -56,16 +63,16 @@
             </form>
         </div>
     </div>
-</div>
+</div> --}}
 <div class="container ">
     <div class="row justify-content-center">
         <div class="col-md-12 ">
             <div class="main-container">
                 <div class="container-header"><span>Upload Adds</span></div>
                 <div class="container-body">
-                    <div>
+                    {{-- <div>
                         <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate Add</button>
-                    </div>
+                    </div> --}}
                     <div class="table-responsive">
                         <table class="myTable" >
                             <thead>
@@ -98,40 +105,6 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Placement 1</td>
-                                    <td>Test</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>dasdsad</td>
-                                    <td class="d-flex u-gap-10">
-                                        <button class="u-action-btn u-bg-primary">
-                                            Edit
-                                        </button>
-                                        <button class="u-action-btn u-bg-danger">
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Placement 1</td>
-                                    <td>Test</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>Gabriel Quing</td>
-                                    <td>May 16 2024</td>
-                                    <td>dasdsad</td>
-                                    <td class="d-flex u-gap-10">
-                                        <button class="u-action-btn u-bg-primary">
-                                            Edit
-                                        </button>
-                                        <button class="u-action-btn u-bg-danger">
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -144,13 +117,13 @@
         <script>
         $(document).ready(function(){
             
-            $('.btn-close-add').on('click', function(){
-                $('.generate-add').hide();
-            });
-            $('.btn-open-add').on('click', function(){
-                $('.generate-add').show();
-                console.log('tyest');
-            });
+            // $('.btn-close-add').on('click', function(){
+            //     $('.generate-add').hide();
+            // });
+            // $('.btn-open-add').on('click', function(){
+            //     $('.generate-add').show();
+            //     console.log('tyest');
+            // });
         });
         </script>
     @endsection

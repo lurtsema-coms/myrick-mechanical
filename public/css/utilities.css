@@ -183,6 +183,9 @@
 .u-pl-80 {
     padding-left: 5rem;
 }
+.u-pr-80 {
+    padding-right: 3rem;
+}
 .u-pr-16 {
     padding-right: 6rem;
 }
@@ -692,7 +695,7 @@
     margin: 0px;
 }
 .container-body{
-    height: 600px;
+    /* height: 600px; */
     padding: 20px;
 }
 .myTable{
@@ -783,7 +786,7 @@
     border-radius: 20px;
 }
 .background-container-gradient {
-    background: linear-gradient(to left, #1F51A4, #0987CF);
+    background: linear-gradient(to right, #030409, #1f2a3a);
 }
 
 .login-input{
