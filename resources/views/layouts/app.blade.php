@@ -127,12 +127,12 @@
             <li>
                 <a href="{{ route('manageAccount')}}" class="{{ Request::is('manage_account') ? ' active-nav' : '' }}">
                     <i class="bx"><span class="material-symbols-outlined">person_add</span></i>
-                    <span class="nav-item">Acounts </span>
+                    <span class="nav-item">Acounts</span>
                 </a>
                 <span class="tooltip">Manage Accounts</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('profile')}}" class="{{ Request::is('profile') ? ' active-nav' : '' }}">
                     <i class="bx"><span class="material-symbols-outlined">manage_accounts</span></i>
                     <span class="nav-item">Profile</span>
                 </a>
@@ -157,7 +157,7 @@
             <div class="u-topbar">
                 <div class="topbar-container">
                     <h1>Welcome To Myrick Mechanical System Access</h1>
-                    <h3>Dashboard</h3>
+                    <h3>@yield('module-name')</h3>
                 </div>
             </div>
             <div class="u-body-content">
