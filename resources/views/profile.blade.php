@@ -3,14 +3,18 @@
 
 @section('styles')
 <style>
-    /* .modal-box{
-        max-width: 75rem !important;
-    } */
-
     input::file-selector-button {
         margin-top:4px;
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        cursor: pointer;
+        border: 1px solid #b9b9b9;
+        text-transform: none;
+        color: #212529;
+        background-color: #f4f4f4;
     }
-
 
 </style>
 @endsection
@@ -114,8 +118,19 @@
                                     </td>
                                     <td class="custom_form_body change-photo-container">
                                         <div>
-                                            <img src="{{ asset('img/gab.png') }}" alt="" class="user-img-profile">
-                                            <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Change Profile Picture</button>
+                                            <form method="POST" id="photoForm" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="user_picture">
+                                                    <label for="user_photo" id="photo_label">
+                                                    @if (auth()->user()->img == null)
+                                                        <img src="{{ asset('profile_picture/img/user.png') }}" alt="" id="img_user_photo" loading="lazy">
+                                                    @else
+                                                        <img src="{{ asset('profile_picture/img/'.auth()->user()->img ) }}" alt="" id="img_user_photo" loading="lazy">
+                                                    @endif
+                                                    </label>
+                                                    <input type="file" id="user_photo" name="user_photo" style="display:none" accept="image/jpeg,image/png">
+                                                </div>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
@@ -200,10 +215,60 @@
         });
 
         if ("{{ session('successPassword') }}"){
-        setTimeout(function(){
-            window.location.href = "{{ route('logout') }}"
-        }, 2000);
-    }
+            setTimeout(function(){
+                window.location.href = "{{ route('logout') }}"
+            }, 2000);
+        }
+
+        $('#photoForm').on('change', function(event){
+            event.preventDefault();
+            var formData = new FormData();
+            formData.append('photo', $('#user_photo')[0].files[0]);
+            formData.append('_token', '{{ csrf_token() }}');
+            var fileType = $('#user_photo')[0].files[0].type;
+            if (fileType != "image/jpeg" && fileType != "image/png") {
+                $('#photo_error').show();
+            } else {
+                $('#photo_error').hide();
+                $.ajax({
+                    url: '{{ route('upload_img') }}',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    success: function(response){
+                        var timestamp = new Date().getTime();
+                        $('#img_user_photo').attr('src', '{{ asset('profile_picture/img/') }}' + '/' + response.photo_name + '?' + timestamp);
+                        let timerInterval;
+                        Swal.fire({
+                            html: 'Your profile picture has been updated successfully',
+                            timer: 1200,
+                            timerProgressBar: false,
+                            didOpen: () => {
+                                Swal.showLoading();
+                                const b = Swal.getHtmlContainer().querySelector('b');
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft();
+                                }, 100);
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        }).then((result) => {
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log('I was closed by the timer');
+                            }
+                        });
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                });
+            }
+        });
+
+
     });
     </script>
     @endsection

@@ -103,7 +103,11 @@
             <i class="bx" id="sidebar-menu-btn"><span class="material-symbols-outlined">menu</span></i>
         </div>
         <div class="sidebar-user">
-            <img src="{{ asset('img/gab.png') }}" alt="" class="user-img">
+            @if (auth()->user()->img == null)
+                <img class="user-img" src="{{ asset('img/user.png') }}" alt="" id="img_user_photo" loading="lazy">
+            @else
+                <img class="user-img" src="{{ asset('profile_picture/img/'.auth()->user()->img ) }}" alt="" id="img_user_photo" loading="lazy">
+            @endif
             <div>
                 <p class="sidebar-username">{{ Auth::user()->name }}</p>
                 <p class="sidebar-role">Admin</p>

@@ -902,9 +902,25 @@
 }
 
 
+.user_picture {
+    position: relative;
+    margin-bottom: 10px;
+}
+.user_picture img {
+    width: 150px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+
 .custom_form_password{
     border-top: 1px solid rgb(193, 189, 189);
 }
+
+#img_user_photo:hover {
+    opacity: 0.7;
+}
+
 
 
 @media (max-width: 1065px) {
@@ -957,6 +973,10 @@
     .customer-box-header-container {
         flex-direction: column;
         gap: 30px;
+    }
+
+    .custom_form_title{
+        text-align: start !important;
     }
 }
 
