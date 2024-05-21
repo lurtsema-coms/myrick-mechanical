@@ -24,6 +24,7 @@
     @yield('content')
     <section class="footer">
         <div class="section-wrapper mx-3 mt-3 mx-md-5 mt-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
+            @yield('ad_section')
             <div class="partners row row-cols-1 row-cols-md-4 row-cols-xl-6 gap-3">
                 <div class="partner-card col flex-grow-1 mt-3 d-flex justify-content-center align-items-center">
                     <img class="img-fluid" src="{{ asset('images/Partners/WGeo.png') }}" alt="">
@@ -44,7 +45,12 @@
             <p class="text-center text-blue mt-2"> <a class="text-blue" href="{{ url('/') }}">Myrick Mechanical LLC | All Rights Reserved</a> | <a class="text-blue" href="{{ route('privacy_policy') }}">Privacy Policy | Terms</a></p>
         </div>
     </section>
-    <img class="gear-bg w-100 position-absolute d-none d-md-block" src="{{asset('images/Elements/Footer Gear 2.svg')}}" alt="">
+    <div class="bottom-bg w-100 position-absolute d-none d-xl-flex flex-column align-items-center justify-content-center">
+        <img class="gear-bg w-100" src="{{asset('images/Elements/Footer Gear 2.svg')}}" alt="">
+        @if (!empty($__env->yieldContent('ad_section')))
+        <div class="bg-extender"></div>
+        @endif
+    </div>
     @yield('script_content')
 </body>
 </html>

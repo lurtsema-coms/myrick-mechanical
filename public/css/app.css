@@ -233,16 +233,41 @@ body {
   max-width: 60px;
 }
 
-.gear-bg {
+.bottom-bg {
+  position: absolute;
   bottom: 0;
   z-index: -1;
   margin: 0;
+
+}
+
+/* .gear-bg {
+
+} */
+
+.bg-extender {
+  height: 10rem;
+  width: 100%;
+  background-color: #ffffff;
+  bottom: 0;
+  z-index: -2;
 }
 
 .partner-card img {
   max-height: 150px !important;
   width: auto;
 }
+
+
+._ad-link {
+  display: block;
+  margin: auto;
+  width: max(300px, 80%);
+  aspect-ratio: 16 / 5;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
 
 /* gauge */
 .gauge-section {
@@ -289,11 +314,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .footer {
-    background-color: #ffffff;
-    padding-top: 3rem !important;
-    margin-top: 5rem;;
-  }
+
 
   html {
     scroll-padding-top: 20rem;
@@ -303,5 +324,11 @@ body {
 @media screen and (max-width: 1200px) {
   :root{
     font-size: 20px !important;
+  }
+
+  .footer {
+    background-color: #ffffff;
+    padding-top: 3rem !important;
+    margin-top: 5rem;;
   }
 }
