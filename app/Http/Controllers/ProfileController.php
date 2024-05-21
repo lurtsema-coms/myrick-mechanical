@@ -13,7 +13,14 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile');
+        $data=[];
+        $user_id = auth()->user()->id;
+
+        $data['userInfo'] = User::where('id',$user_id)
+        ->first();
+
+
+        return view('profile', $data);
     }
 
     /**
@@ -43,8 +50,20 @@ class ProfileController extends Controller
 
             return redirect()->back()->with('successPassword', 'Password updated, you will be logged-out.');
         } else {
-            return redirect()->back()->with('error', 'Note: Incorrect Current Password.');
+            return redirect()->back()->with('error', 'Note: Incorrect Current Password!');
         }
+    }
+
+    public function updateUsername (Request $request, $id)
+    {
+        $updatedName = $request->input('name');
+        $updatedEmail = $request->input('email');
+
+        User::where('id',$id)->update([
+            'name' => $updatedName,
+            'email' => $updatedEmail,
+        ]);
+        return redirect()->back()->with('successUsername', 'Succefully Changed Username And Email!');
     }
 
     /**

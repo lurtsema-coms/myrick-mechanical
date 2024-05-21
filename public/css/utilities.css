@@ -511,6 +511,9 @@
 .custom_form_body{
     width: 80%;
 }
+.custom_form_body_save{
+    width: 80%;
+}
 
 .custom_form_title span{
     font-size: 16px;
