@@ -162,6 +162,12 @@
 .u-p-15 {
     padding: 0.938rem;
 }
+.u-ml-13{
+    margin-left: 0.813rem;
+}
+.u-ml-14{
+    margin-left: 0.875rem;
+}
 .u-ml-15{
     margin-left:0.9375rem;
 }
@@ -197,6 +203,8 @@
 .u-ml-80 {
     margin-left: 5rem;
 }
+
+
 .u-mt-10 {
     margin-top: 0.625rem;
 }
@@ -479,22 +487,49 @@
     color: #4d4b4b !important;
 }
 
+.custom_form_table,
 .custom_normal_table {
     width: 100%;
     border-collapse: collapse;
 }
+.custom_form_table{
+    padding: 20px;
+}
 
+.custom_form_table th,
 .custom_normal_table th,
 .custom_normal_table td {
     text-align: left;
-    width: 300px;
+    width: 100px;
     font-size: 14px;
 }
 
+.custom_form_title {
+    text-align: end !important;
+    width: 25%;
+}
+.custom_form_body{
+    width: 80%;
+}
+
+.custom_form_title span{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+.custom_form_table tr{
+    gap: 5rem;
+}
+.custom_form_table td{
+    padding: 20px;
+}
 .custom_normal_table td {
     padding: 10px;
 }
 
+.custom_form_table td p,
 .custom_normal_table td p {
     font-weight: bold;
     color: #4d4b4b !important;
@@ -707,6 +742,11 @@
     /* height: 600px; */
     padding: 20px;
 }
+
+.container-body-profile{
+    padding: 30px;
+    margin-right: 60px;
+}
 .myTable{
     border-collapse: collapse;
     width: 100%;
@@ -834,6 +874,36 @@
     width: 100%;
 }
 
+
+/* Profile */
+
+.profile-container{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.profile-body,
+.profile-header{
+    border: 1px solid black;
+    padding: .6rem;
+}
+.change-photo-container{
+    display: flex;
+    gap: 500px;
+}
+
+.user-img-profile{
+    width: 150px;
+    border-radius: 100%;
+    border: 3px solid rgb(160, 160, 160);
+}
+
+
+.custom_form_password{
+    border-top: 1px solid rgb(193, 189, 189);
+}
+
+
 @media (max-width: 1065px) {
 .main-card-body {
     flex-direction: column-reverse;
@@ -857,6 +927,7 @@
 @media only screen and (max-width: 500px) {
     /* Set the table row (tr) to be displayed as a block */
     .custom_table tr,
+    .custom_form_table tr,
     .custom_normal_table tr,
     .custom_sm_normal_table tr {
         display: block;
@@ -864,6 +935,7 @@
 
     /* Hide table headers on smaller screens */
     .custom_table th,
+    .custom_form_table th,
     .custom_normal_table th,
     .custom_sm_normal_table th {
         display: none;
@@ -871,6 +943,7 @@
 
     /* Style table data (td) for smaller screens */
     .custom_table td,
+    .custom_form_table td,
     .custom_normal_table td,
     .custom_sm_normal_table {
         display: block;

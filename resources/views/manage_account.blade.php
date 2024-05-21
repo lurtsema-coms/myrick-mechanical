@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('module-name', 'My Account')
 
 @section('styles')
 <style>
