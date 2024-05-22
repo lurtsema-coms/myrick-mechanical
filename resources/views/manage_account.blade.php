@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('module-name', 'My Account')
+@section('module-name', 'Employee Accounts')
 
 @section('styles')
 <style>

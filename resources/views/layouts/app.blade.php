@@ -7,15 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Myrick</title>
-
-    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('/img/logo.png') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/utilities.css') }}">
@@ -119,7 +116,7 @@
         <ul>
             <li>
                 <a href="{{ url('/') }}">
-                    <i class="bx"><span class="material-symbols-outlined">team_dashboard</span></i>
+                    <i class="bx"><span class="material-symbols-outlined">arrow_back</span></i>
                     <span class="nav-item">Website</span>
                 </a>
                 <span class="tooltip">Website</span>
