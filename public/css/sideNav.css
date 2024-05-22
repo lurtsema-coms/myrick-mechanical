@@ -185,7 +185,7 @@ body {
 .u-topbar {
     flex: 0 0 auto; /* Prevent topbar from shrinking */
     position: relative;
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
     min-height: 10vh;
     top: 0;
     left: 250px;
@@ -195,11 +195,17 @@ body {
 }
 
 .topbar-container {
-    border-bottom: 1px solid black;
+    color: black;
+    font-family: 'Oswald', sans-serif !important;
+    background-color: #EEF1F4;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-weight: 700;
+    font-size: 35px;
 }
 
 .topbar-container h3 {
-    color: #9391AD;
+    color: black;
     font-weight: 400;
 }
 
@@ -311,6 +317,13 @@ body {
         z-index: 20;
     }
 }
+
+@media (max-width: 500px) {
+    .topbar-container{
+        font-size: 26px;
+    }
+}
+
 
 @media (max-width: 376px) {
     .u-sidebar ul li {

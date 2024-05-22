@@ -160,7 +160,7 @@
         <div class="main-content">
             <div class="u-topbar">
                 <div class="topbar-container">
-                    <h1>Welcome To Myrick Mechanical System Access</h1>
+                    <span>Welcome To Myrick Mechanical System Access</span>
                     <h3>@yield('module-name')</h3>
                 </div>
             </div>

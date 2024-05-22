@@ -435,6 +435,16 @@
     border-radius: 10px;
 
 }
+.modal-box-edit {
+    margin: auto;
+    min-height: auto;
+    width: 100%;
+    max-width: 75rem !important;
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+    border-radius: 10px;
+}
 
 .modal-content {
     display: flex;
@@ -656,6 +666,8 @@
 .login-card-container{
     max-width: 43.5rem;
     width: 100%
+    
+    
 }
 .login-card-container img {
     max-width: 100%;
@@ -670,6 +682,7 @@
     padding:20px;
     background: #ffffff;
     border-radius: 20px;
+    
 }
 .background-container-gradient {
     background: linear-gradient(to left, #1F51A4, #0987CF);
@@ -822,6 +835,7 @@
 .login-card-container{
     max-width: 43.5rem;
     width: 100%
+    
 }
 .login-card-container img {
     max-width: 100%;
@@ -921,9 +935,21 @@
     opacity: 0.7;
 }
 
+.user_picture{
+    border: 2px solid black;
+    /* border-radius: 20px; */
+}
+
 
 
 @media (max-width: 1065px) {
+body{
+    background:linear-gradient(to right, #030409, #1f2a3a);
+}
+.login-card-container{
+    box-shadow: none !important;
+}
+
 .main-card-body {
     flex-direction: column-reverse;
     justify-content: center;
