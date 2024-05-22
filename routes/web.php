@@ -35,7 +35,12 @@ Route::middleware(['auth'])->group(function () {
 
     //Manage Account
     Route::get('/manage_account', [ManageAccountController::class, 'index'])->name('manageAccount');
+    Route::get('/manage_account/{id}/view', [ManageAccountController::class, 'view'])->name('viewAccount');
     Route::post('/manage_account', [ManageAccountController::class, 'add'])->name('add_user');
+    Route::post('/manage_account/{id}/update', [ManageAccountController::class, 'update'])->name('account_update');
+    Route::get('/manage_account/{id}/delete', [ManageAccountController::class, 'delete'])->name('deleteAccount');
+
+
 
     //Form Response
     Route::get('/form_response', [FormResponseController::class, 'index'])->name('formResponse');

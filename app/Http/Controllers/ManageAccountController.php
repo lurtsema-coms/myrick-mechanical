@@ -21,18 +21,22 @@ class ManageAccountController extends Controller
 
     public function index()
     {
-        $data['users'] = User::leftJoin('users as creator', 'creator.id', 'users.created_by' )
+        $user_id = auth()->user()->id;
+        $data['users'] = User::leftJoin('users as creator', 'creator.id', 'users.created_by')
             ->leftJoin('users as updator', 'updator.id', 'users.updated_by')
             ->select(
+                'users.id',
                 'users.name',
                 'users.email',
                 'users.created_at',
                 'users.updated_at',
                 'creator.name as creator_name',
-                'updator.name as updator_name',
+                'updator.name as updator_name'
             )
+            ->where('users.id', '!=', $user_id)
+            ->whereNull('users.deleted_at')
             ->get();
-            ;
+    
         return view('manage_account', $data);
     }
 
@@ -61,14 +65,51 @@ class ManageAccountController extends Controller
 
     }
 
+    public function view ($id)
+    {
+        $accountInfo = User::where('id',$id)
+        ->first();
+
+        return $accountInfo;
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $user = User::find($id);
+        if(!($user->email == $request->input('edit_email'))){
+
+            $request->validate([
+                'email' => ['email', 'unique:users,email'],
+            ]);
+
+            $user->update([
+                'email' => $request->input('edit_email')
+            ]);
+            
+        }
+        // Update user account basic credentials
+        $user->update([
+            'name' => $request->input('edit_name'),
+        ]);
+        // Change Password
+        if ($request->has('password') && !empty($request->input('password'))) {
+            // Update the password only if a new one is provided
+                $user->password = Hash::make($request->input('password'));
+        }
+        $user->save();
+
+        return back()->with('success', 'User account has been updated successfully.');
+
+    }
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function delete($id)
     {
-        //
+        $user = User::withTrashed()->find($id);
+        $user->delete();
+        return true;
     }
-
     /**
      * Display the specified resource.
      */
@@ -88,10 +129,7 @@ class ManageAccountController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
