@@ -19,7 +19,7 @@
                 <span class="fw-bold text-white fs-1">INDUSTRIAL, COMMERCIAL, AND RESIDENTIAL</span> 
             </h1>
             <p class="text-white fs-6">Whether it’s HVAC installation, maintenance, or repairs, we’ve got you covered.</p>
-            <a href="#contact-us-section" class="button-action text-blue text-decoration-none bg-light fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">BOOK NOW</a>
+            <a href="#contact-form-section" class="button-action text-blue text-decoration-none bg-light fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">BOOK NOW</a>
         </div>
     </section>
     <section class="logo-section">
@@ -258,7 +258,7 @@
                     <h3 class="text-center">CALL</h3>
                     <button class="text-blue fw-bold fs-4 rounded-pill px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">(913) 713-3734</button>
                 </div>
-                <div class="contact-right-side col">
+                <div id="contact-form-section" class="contact-right-side col">
                     <h3 class="text-center">Contact Form</h3>
                     <iframe
                         src="
@@ -288,13 +288,13 @@
     </section>
 @endsection
 
-@section('ad_section')
+{{-- @section('ad_section')
 <div class="_ad-section">
     <a target="_blank" href="#" class="_ad-link">
         <img class="img-fluid" src="https://plus.unsplash.com/premium_photo-1661439660359-3bf491320728?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
     </a>
 </div>
-@endsection
+@endsection --}}
 
 @section('script_content')
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

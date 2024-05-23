@@ -306,6 +306,17 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+  :root{
+    font-size: 20px !important;
+  }
+
+  .footer {
+    background-color: #ffffff;
+    padding-top: 3rem !important;
+    margin-top: 5rem;;
+  }
+}
 
 @media screen and (max-width: 992px) {
   :root{
@@ -317,18 +328,6 @@ body {
 
 
   html {
-    scroll-padding-top: 20rem;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  :root{
-    font-size: 20px !important;
-  }
-
-  .footer {
-    background-color: #ffffff;
-    padding-top: 3rem !important;
-    margin-top: 5rem;;
+    scroll-padding-top: 15rem;
   }
 }
