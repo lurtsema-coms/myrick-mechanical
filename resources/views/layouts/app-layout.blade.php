@@ -19,7 +19,7 @@
 <body class="position-relative">
     <section class="gauge-section position-fixed" style="display: none;">
         <img class="gauge-pointer img-fluid w-100 position-absolute left-0" src="{{ asset('images/Gauge/Realistic Pointer.png') }}" alt="">
-        <img class="gauge-base img-fluid w-100" src="{{ asset('images/Gauge/Realistic Base.png') }}" alt="">
+        <img class="gauge-base img-fluid w-100" src="{{ asset('images/Gauge/RealisticBase-v2.png') }}" alt="">
     </section>
     @yield('content')
     <section class="footer">
