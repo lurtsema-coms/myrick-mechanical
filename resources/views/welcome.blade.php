@@ -72,7 +72,7 @@
             <h1 class="fw-bold fs-2 text-center">CUSTOMER SATISFACTION GUARANTEED!</h1>
             <div class="my-5 d-flex flex-column flex-xl-row customer-satisfaction-content justify-content-center align-items-center">
                 <div class="customer-satisfaction-left-side mx-auto align-self-xl-end">
-                    <img class="aircon-guy img-fluid rounded-4" src="{{ asset('images/Photos/First pic.png') }}" alt="">
+                    <img width="1200" class="aircon-guy img-fluid rounded-4" src="{{ asset('images/Photos/First pic.png') }}" alt="">
                 </div>
                 <div class="accreditation-wrapper">
                     <p class="py-3 ps-3 fs-6 lh-sm ">With our team of skilled technicians
