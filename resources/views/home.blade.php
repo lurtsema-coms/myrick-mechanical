@@ -88,33 +88,29 @@
                         <tr>
                             <td>
                                 <p>Start Date:</p>
-                                <input class="u-input" name="start_date" id="view_start" type="date" required>
+                                <input class="u-input" name="start_date" id="view_start" type="date" readonly>
                             </td>
                             <td>
                                 <p>End Date:</p>
-                                <input class="u-input" name="end_date" id="view_end" type="date" required>
+                                <input class="u-input" name="end_date" id="view_end" type="date" readonly>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p>Ad Name:</p>
-                                <input class="u-input" name="image_name"  id="view_image_name" type="text" required>
+                                <input class="u-input" name="image_name"  id="view_image_name" type="text" readonly>
                             </td>
                             <td>
                                 <p>Add Placement:</p>
-                                <select class="u-input" name="ad_placement" id="view_ad_placement" required>
-                                    <option selected value="Placement 1">Placement 1</option>
+                                <select class="u-input" name="ad_placement" id="view_ad_placement" disabled>
+                                    <option  value="Placement 1">Placement 1</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Re-upload Ad</p>
-                                <input class="u-input" type="file" id="view_ad_image" name="ad_image" accept="image/jpeg,image/png" >
-                            </td>
-                            <td>
                                 <p>Redirect Link:</p>
-                                <input class="u-input" id="view_re_link" name="re_link" type="text"  required>
+                                <input class="u-input" id="view_re_link" name="re_link" type="text"  readonly>
                             </td>
                         </tr>
                     </tbody>
@@ -127,7 +123,6 @@
                 </div>
                 <div class="u-flex-space-between u-flex-wrap">
                     <button class="u-t-gray-dark u-fw-b u-btn u-bg-default u-m-10 u-border-1-default btn-close-view"  type="button">Close</button>
-                    <button class="u-t-white u-fw-b u-btn u-bg-primary u-m-10 u-border-1-default btn-submit-view"  type="submit">Submit</button>
                 </div>
             </form>
         </div>
@@ -163,18 +158,18 @@
                             <td>
                                 <p>Add Placement:</p>
                                 <select class="u-input" name="ad_placement" id="edit_ad_placement" required>
-                                    <option selected value="Placement 1">Placement 1</option>
+                                    <option  value="Placement 1">Placement 1</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Re-upload Ad</p>
-                                <input class="u-input" type="file" id="edit_ad_image" name="ad_image" accept="image/jpeg,image/png" >
-                            </td>
-                            <td>
                                 <p>Redirect Link:</p>
                                 <input class="u-input" id="edit_re_link" name="re_link" type="text"  required>
+                            </td>
+                            <td>
+                                <p>Re-upload Ad</p>
+                                <input class="u-input" type="file" id="edit_ad_image" name="ad_image" accept="image/jpeg,image/png" >
                             </td>
                         </tr>
                     </tbody>
@@ -266,6 +261,9 @@
             $('.btn-close-edit').on('click', function(){
                 $('.edit-ad').hide();
                 });
+            $('.btn-close-view').on('click', function(){
+                $('.view-ad').hide();
+                });
             $('.btn-open-add').on('click', function(){
                 $('.generate-add').show();
             });
@@ -291,6 +289,31 @@
                             $('#edit_current_ad_image').attr('src', response.file_path);
                             $('.edit-ad').show();
                             $('form').attr('action', submitUrl);
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                });
+            });
+
+            $('.view-modal').click(function(e){
+                const entryId = $(this).data('entry-id');
+                const url = $(this).attr('href');
+                let editUrl = "{{ route('viewAd', 'entryId') }}";
+                const newUrl = editUrl.replace('entryId', entryId);
+                $.ajax({
+                    url: newUrl,   
+                        dataType: 'json',
+                        type: 'GET',
+                        success: function(response) {
+                            console.log(response);
+                            $('#view_start').val(response.to_date);
+                            $('#view_end').val(response.from_date);
+                            $('#view_image_name').val(response.image_name);
+                            $('#view_ad_placement').val(response.ad_placement);
+                            $('#view_re_link').val(response.link);
+                            $('#view_current_ad_image').attr('src', response.file_path);
+                            $('.view-ad').show();
                         },
                         error: function(error) {
                             console.log(error);
