@@ -73,6 +73,66 @@
     </div>
 </div>
 
+<div class="modal-center view-ad" style="display:none">
+    <div class="modal-box">
+        <div class="modal-content">
+            <form method="POST" action="" enctype="multipart/form-data">
+                @csrf
+                <table class="custom_normal_table">
+                    <tbody>
+                        <tr>
+                            <td class="custom_table_header" colspan="2">
+                                <h3 class="f-weight-bold">View Current Add</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Start Date:</p>
+                                <input class="u-input" name="start_date" id="view_start" type="date" required>
+                            </td>
+                            <td>
+                                <p>End Date:</p>
+                                <input class="u-input" name="end_date" id="view_end" type="date" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ad Name:</p>
+                                <input class="u-input" name="image_name"  id="view_image_name" type="text" required>
+                            </td>
+                            <td>
+                                <p>Add Placement:</p>
+                                <select class="u-input" name="ad_placement" id="view_ad_placement" required>
+                                    <option selected value="Placement 1">Placement 1</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Re-upload Ad</p>
+                                <input class="u-input" type="file" id="view_ad_image" name="ad_image" accept="image/jpeg,image/png" >
+                            </td>
+                            <td>
+                                <p>Redirect Link:</p>
+                                <input class="u-input" id="view_re_link" name="re_link" type="text"  required>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="u-m-10">
+                    <div class="u-bg-primary u-fw-b u-t-white" style="padding: 20px 10px">
+                        Uploaded Ad
+                    </div>
+                    <img id="view_current_ad_image" src="" width="100%" >
+                </div>
+                <div class="u-flex-space-between u-flex-wrap">
+                    <button class="u-t-gray-dark u-fw-b u-btn u-bg-default u-m-10 u-border-1-default btn-close-view"  type="button">Close</button>
+                    <button class="u-t-white u-fw-b u-btn u-bg-primary u-m-10 u-border-1-default btn-submit-view"  type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <div class="modal-center edit-ad" style="display:none">
     <div class="modal-box">
         <div class="modal-content">
@@ -117,13 +177,14 @@
                                 <input class="u-input" id="edit_re_link" name="re_link" type="text"  required>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="custom_table_header" colspan="2">
-                                <img id="current_ad_image" src="" width="100%" height="200px">
-                                </td>
-                        </tr>
                     </tbody>
                 </table>
+                <div class="u-m-10">
+                    <div class="u-bg-primary u-fw-b u-t-white" style="padding: 20px 10px">
+                        Uploaded Ad
+                    </div>
+                    <img id="edit_current_ad_image" src="" width="100%" >
+                </div>
                 <div class="u-flex-space-between u-flex-wrap">
                     <button class="u-t-gray-dark u-fw-b u-btn u-bg-default u-m-10 u-border-1-default btn-close-edit"  type="button">Close</button>
                     <button class="u-t-white u-fw-b u-btn u-bg-primary u-m-10 u-border-1-default btn-submit-edit"  type="submit">Submit</button>
@@ -167,8 +228,8 @@
                                     <td>{{$ad->from_date}}</td>
                                     <td>{{$ad->to_date}}</td>
                                     <td>{{$ad->creator_name}}</td>
-                                    <td>{{$ad->updated_by}}</td>
                                     <td>{{$ad->created_at}}</td>
+                                    <td>{{$ad->updator_name}}</td>
                                     <td>{{$ad->updated_at}}</td>
                                     <td class="d-flex u-gap-10">
                                         <button class="u-action-btn u-bg-card-header-color view-modal" data-entry-id="{{ $ad->id }}" data-href="">
@@ -207,7 +268,6 @@
                 });
             $('.btn-open-add').on('click', function(){
                 $('.generate-add').show();
-                console.log('tyest');
             });
 
             $('.edit-modal').click(function(e){
@@ -228,8 +288,7 @@
                             $('#edit_image_name').val(response.image_name);
                             $('#edit_ad_placement').val(response.ad_placement);
                             $('#edit_re_link').val(response.link);
-                            $('#current_ad_image').attr('src', response.file_path);
-
+                            $('#edit_current_ad_image').attr('src', response.file_path);
                             $('.edit-ad').show();
                             $('form').attr('action', submitUrl);
                         },

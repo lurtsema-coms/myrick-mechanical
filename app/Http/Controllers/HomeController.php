@@ -25,10 +25,12 @@ class HomeController extends Controller
     public function index()
     {
         $data = [];
-        $data['ads'] = Ad::leftJoin('users', 'users.id', 'ads.created_by')
+        $data['ads'] = Ad::leftJoin('users as creator', 'creator.id', 'ads.created_by')
+            ->leftJoin('users as updator','updator.id','ads.updated_by' )
             ->select(
                 'ads.*',
-                'users.name as creator_name'
+                'creator.name as creator_name',
+                'updator.name as updator_name'
             )
             ->whereNull('ads.deleted_at')
             ->paginate(10);  
@@ -49,7 +51,7 @@ class HomeController extends Controller
         $file = $form_input['ad_image'];
         $file_extension = $file->getClientOriginalExtension();
         $file_name = "$image_name." . $file_extension;
-        $file->storeAs('public/ads', $file_name);
+        $file->storeAs('ads', $file_name, 'public');
 
         Ad::create([
             'from_date' => $from_date,
@@ -57,7 +59,7 @@ class HomeController extends Controller
             'image_name' => $image_name,
             'ad_placement' => $ad_placement,
             'ad_placement' => $ad_placement,
-            'file_path' => 'ads/' . $file_name, // relative to the public folder
+            'file_path' => 'storage/ads/' . $file_name, // path for web access
             'link' => $re_link,
             'created_by' => $user_id,
         ]);
@@ -91,20 +93,15 @@ class HomeController extends Controller
             $image_name = $request->input('image_name');
             $file_extension = $file->getClientOriginalExtension();
             $file_name = "$image_name." . $file_extension;
-    
             // Store the file
-            $file->storeAs('ads', $file_name);
-    
+            $file->storeAs('ads', $file_name, 'public');
             // Update the file path
-            $file_path = storage_path('app/ads') . "/$file_name";
-    
+            $file_path = 'storage/ads/' . $file_name;
             // Update the ad with the new image details
             $updateAd->update([
                 'file_path' => $file_path,
             ]);
         }
-    
-        // Update the ad with other details
         $updateAd->update([
             'from_date' => $request->input('start_date'),
             'to_date' => $request->input('end_date'),
