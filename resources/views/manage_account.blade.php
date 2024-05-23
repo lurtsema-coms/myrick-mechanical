@@ -61,6 +61,50 @@
         </div>
     </div>
 </div>
+<div class="modal-center generate-account" style="display:none">
+    <div class="modal-box">
+        <div class="modal-content">
+            <form action="{{ route('add_user') }}" method="POST" autocomplete="off">
+                @csrf
+                <table class="custom_normal_table">
+                    <tbody>
+                        <tr>
+                            <td class="custom_table_header" colspan="2">
+                                <h3 class="f-weight-bold">Generate Account Form</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>First Name:</p>
+                                <input class="u-input" name="first_name" type="text" required>
+                            </td>
+                            <td>
+                                <p>Last Name:</p>
+                                <input class="u-input" name="last_name" type="text" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Email</p>
+                                <input class="u-input" name="email" type="text" required>
+                            </td>
+                            <td>
+                                <p>Temporary Password</p>
+                                <input class="u-input" type="password" name="password" value="qwerty123" placeholder="qwerty123" readonly>
+                                <p style="position: absolute; font-size: 12px; color: rgb(69, 110, 159) !important; "> Temporary password = qwerty123</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <div class="u-flex-space-between u-flex-wrap">
+                    <button class="u-t-gray-dark u-fw-b u-btn u-bg-default u-m-10 u-border-1-default btn-close-add" id="btn-close-add" type="button">Close</button>
+                    <button class="u-t-white u-fw-b u-btn u-bg-primary u-m-10 u-border-1-default btn-submit-add" id="btn-submit-add" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <div class="modal-center edit-account" style="display:none">
     <div class="modal-box">

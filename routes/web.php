@@ -32,6 +32,11 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     //Home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::post('/home/createAd', [HomeController::class, 'create'])->name('createAd');
+    Route::get('/home/{id}/delete', [HomeController::class, 'delete'])->name('deleteAd');
+    Route::get('/home/{id}/view', [HomeController::class, 'view'])->name('viewAd');
+    Route::post('/home/{id}/update', [HomeController::class, 'update'])->name('updateAd');
+
 
     //Manage Account
     Route::get('/manage_account', [ManageAccountController::class, 'index'])->name('manageAccount');

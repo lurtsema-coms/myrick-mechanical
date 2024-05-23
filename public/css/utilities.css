@@ -108,6 +108,9 @@
 .u-bg-primary {
     background-color: var(--primary);
 }
+.u-bg-card-header-color {
+    background-color: var(--card-header-color);
+}
 .u-action-btn {
     padding: 5px 10px;
     color: var(--white);
@@ -891,7 +894,11 @@
     width: 100%;
 }
 
-
+.pagination-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
 /* Profile */
 
 .profile-container{
