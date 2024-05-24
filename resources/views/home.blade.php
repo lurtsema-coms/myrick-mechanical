@@ -27,7 +27,7 @@
                     <tbody>
                         <tr>
                             <td class="custom_table_header" colspan="2">
-                                <h3 class="f-weight-bold">Generate Add</h3>
+                                <h3 class="f-weight-bold">Generate Ad</h3>
                             </td>
                         </tr>
                         <tr>
@@ -46,7 +46,7 @@
                                 <input class="u-input" name="image_name" type="text" required>
                             </td>
                             <td>
-                                <p>Add Placement:</p>
+                                <p>Ad Placement:</p>
                                 <select class="u-input" name="ad_placement" id="ad_placement" required>
                                     <option selected value="Placement 1">Placement 1</option>
                                 </select>
@@ -54,7 +54,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <p>Upload Add</p>
+                                <p>Upload Ad</p>
                                 <input class="u-input" type="file" id="ad_image" name="ad_image" accept="image/jpeg,image/png" required>
                             </td>
                             <td>
@@ -83,7 +83,7 @@
                     <tbody>
                         <tr>
                             <td class="custom_table_header" colspan="2">
-                                <h3 class="f-weight-bold">View Current Add</h3>
+                                <h3 class="f-weight-bold">View Current Ad</h3>
                             </td>
                         </tr>
                         <tr>
@@ -102,7 +102,7 @@
                                 <input class="u-input" name="image_name"  id="view_image_name" type="text" readonly>
                             </td>
                             <td>
-                                <p>Add Placement:</p>
+                                <p>Ad Placement:</p>
                                 <select class="u-input" name="ad_placement" id="view_ad_placement" disabled>
                                     <option  value="Placement 1">Placement 1</option>
                                 </select>
@@ -138,7 +138,7 @@
                     <tbody>
                         <tr>
                             <td class="custom_table_header" colspan="2">
-                                <h3 class="f-weight-bold">Edit Add</h3>
+                                <h3 class="f-weight-bold">Edit Ad</h3>
                             </td>
                         </tr>
                         <tr>
@@ -157,7 +157,7 @@
                                 <input class="u-input" name="image_name"  id="edit_image_name" type="text" required>
                             </td>
                             <td>
-                                <p>Add Placement:</p>
+                                <p>Ad Placement:</p>
                                 <select class="u-input" name="ad_placement" id="edit_ad_placement" required>
                                     <option  value="Placement 1">Placement 1</option>
                                 </select>
@@ -193,10 +193,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12 ">
             <div class="main-container">
-                <div class="container-header"><span>Upload Adds</span></div>
+                <div class="container-header"><span>Ads</span></div>
                 <div class="container-body">
                     <div class="d-flex">
-                        <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate Add</button>
+                        <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate Ad</button>
                         @if (session('successUpload'))
                             <span style="color: green; display:block;">{{ session('successUpload') }}</span>
                         @endif
