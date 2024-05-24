@@ -116,9 +116,9 @@
             <div class="main-container">
                 <div class="container-header"><span>Forms</span></div>
                 <div class="container-body">
-                    <div>
+                    {{-- <div>
                         <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate File</button>
-                    </div>
+                    </div> --}}
                     <div class="table-responsive">
                         <table class="myTable" >
                             <thead>
@@ -147,7 +147,7 @@
                                             <button class="u-action-btn u-bg-primary view-modal" type="button"  data-entry-id="{{ $form->id }}" data-href="{{ route('viewResponse', $form->id) }}">
                                                 View
                                             </button>
-                                            <button class="u-action-btn u-bg-danger">
+                                            <button class="u-action-btn u-bg-danger delete_btn" data-entry-id="{{ $form->id }}" data-href="{{ route('deleteResponse', $form->id) }}">
                                                 Delete
                                             </button>
                                         </td>
@@ -204,6 +204,47 @@
                             }
                     });
                 });
+
+                $('.delete_btn').click(function(e) {
+                e.preventDefault();
+                const entryId = $(this).data('entry-id');
+                console.log(entryId);
+                const url = $(this).attr('href');
+                let editUrl = "{{ route('deleteResponse', 'entryId') }}";
+                const newUrl = editUrl.replace('entryId', entryId);
+                console.log(newUrl);
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    reverseButtons: true,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Remove It!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: newUrl,   
+                        dataType: 'json',
+                        type: 'GET',
+                            success: function(response) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'The form has been deleted.',
+                                    'success'
+                                )
+                                .then(() => {
+                                    location.reload(); // Refresh the browser
+                                });
+                            },
+                            error: function(error) {
+                            console.log(error);
+                            }
+                        });
+                    }
+                });
+            });
             });
 
 

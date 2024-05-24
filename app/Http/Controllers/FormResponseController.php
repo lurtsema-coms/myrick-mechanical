@@ -40,4 +40,11 @@ class FormResponseController extends Controller
 
         return $Response;
     }
+
+    public function delete($id)
+    {
+        $user = FormResponse::withTrashed()->find($id);
+        $user->delete();
+        return true;
+    }
 }
