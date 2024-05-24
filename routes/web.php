@@ -4,6 +4,7 @@ use App\Http\Controllers\FormResponseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManageAccountController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [WelcomeController::class, 'index']);
+
 
 Route::get('/privacy-policy', function () {
     return view('privacy-policy');

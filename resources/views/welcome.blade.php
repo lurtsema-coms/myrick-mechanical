@@ -287,21 +287,22 @@
         </div>
     </section>
 
+@if(count($Ads1))
     <section class="ad_container">
         <div class="ad_slider-wrapper">
             <div class="ad_slider">
-                <a href=""target="_blank"><img id="slider1" src="{{ asset('img/ad1.jpg') }}" alt=""></a>
-                <a href="" target="_blank"><img id="slider2" src="{{ asset('img/logo.png') }}" alt=""></a>
-                <a href="" target="_blank"><img id="slider3" src="{{ asset('img/ad2.jpg') }}" alt=""></a>
+                @foreach ($Ads1 as $index => $Ad1)
+                <a href="{{$Ad1->link}}" target="_blank"><img id="ad_{{$Ad1->id}}" src="{{ asset($Ad1->file_path) }}" alt=""></a>
+                @endforeach
             </div>
             <div class="ad_slider-nav">
-                <a href="#slider1"></a>
-                <a href="#slider2"></a>
-                <a href="#slider3"></a>
+                @foreach ($Ads1 as $index => $Ad1)
+                <a href="#ad_{{$Ad1->id}}"></a>
+                @endforeach
             </div>
         </div>
     </section>
-
+@endif
 @endsection
 
 
@@ -384,14 +385,15 @@
         }
 
         $(document).ready(function () {
-            const $slider = $('.ad-slider');
-            const $slides = $('.ad-slider img');
+            const $slider = $('.ad_slider');
+            const $slides = $('.ad_slider a'); // Select the anchor tags instead of img
             let currentIndex = 0;
-            const intervalTime = 2000;
+            const intervalTime = 3000;
 
             function slideToIndex(index) {
+                const slideWidth = $slider.width();
                 $slider.animate({
-                    scrollLeft: $slides.eq(index).position().left
+                    scrollLeft: index * slideWidth
                 }, 'smooth');
             }
 

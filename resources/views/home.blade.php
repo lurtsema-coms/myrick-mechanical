@@ -60,6 +60,7 @@
                             <td>
                                 <p>Redirect Link:</p>
                                 <input class="u-input" id="re_link" name="re_link" type="text"  required>
+                                <p style="position: absolute; font-size: 12px; color: rgb(69, 110, 159) !important; "> Note: Don't forget to include 'https://'</p>
                             </td>
                         </tr>
                     </tbody>
