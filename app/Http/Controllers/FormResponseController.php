@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\FormResponseEmail;
 use App\Models\FormResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class FormResponseController extends Controller
 {
@@ -23,6 +26,20 @@ class FormResponseController extends Controller
         $ipAddress = $request->ip();
         $userAgent = $request->userAgent();
 
+        $details = [
+            'name' => $name,
+            'email' => $email,
+            'form_message' => $message,
+        ];
+
+        try {
+            Mail::to(env('MAIL_TO_ADDRESS'))->send(new FormResponseEmail($details));
+        } catch (\Exception $e) {
+            //
+            Log::error("Error sending mail: " . $e->getMessage());
+        }
+
+
         $formResponse = FormResponse::create([
             'name' => $name,
             'email' => $email,
@@ -31,12 +48,13 @@ class FormResponseController extends Controller
             'user_agent' => $userAgent
         ]);
 
-        return redirect()->back()->with('success', 'form-response-success');
+        return redirect(url('/'))->with('success', 'form-response-success');
     }
 
-    public function view ($id){
-        $Response = FormResponse::where('id',$id)
-        ->first();
+    public function view($id)
+    {
+        $Response = FormResponse::where('id', $id)
+            ->first();
 
         return $Response;
     }

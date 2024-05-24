@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [WelcomeController::class, 'index']);
-Route::get('send', [WelcomeController::class, 'sendnotification']);
 
 Route::get('/privacy-policy', function () {
     return view('privacy-policy');
