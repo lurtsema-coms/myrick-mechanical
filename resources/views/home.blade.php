@@ -195,7 +195,7 @@
             <div class="main-container">
                 <div class="container-header"><span>Ads</span></div>
                 <div class="container-body">
-                    <div class="d-flex">
+                    <div class="d-flex align-items-center">
                         <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate Ad</button>
                         @if (session('successUpload'))
                             <span style="color: green; display:block;">{{ session('successUpload') }}</span>
@@ -282,8 +282,8 @@
                             console.log(response);
                             let submitUrl = "{{ route('updateAd', 'entryId') }}";
                             submitUrl = submitUrl.replace('entryId', response.id);
-                            $('#edit_start').val(response.to_date);
-                            $('#edit_end').val(response.from_date);
+                            $('#edit_start').val(response.from_date);
+                            $('#edit_end').val(response.to_date);
                             $('#edit_image_name').val(response.image_name);
                             $('#edit_ad_placement').val(response.ad_placement);
                             $('#edit_re_link').val(response.link);

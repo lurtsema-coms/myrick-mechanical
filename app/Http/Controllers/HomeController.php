@@ -47,22 +47,25 @@ class HomeController extends Controller
         $ad_placement = $form_input['ad_placement'];
         $re_link = $form_input['re_link'];
 
-        // Get the uploaded file
-        $file = $form_input['ad_image'];
-        $file_extension = $file->getClientOriginalExtension();
-        $file_name = "$image_name." . $file_extension;
-        $file->storeAs('ads', $file_name, 'public');
-
-        Ad::create([
+        $createAd  = new Ad([
             'from_date' => $from_date,
             'to_date' => $to_date,
             'image_name' => $image_name,
             'ad_placement' => $ad_placement,
             'ad_placement' => $ad_placement,
-            'file_path' => 'storage/ads/' . $file_name, // path for web access
+            // 'file_path' => 'storage/ads/' . $file_name, 
             'link' => $re_link,
             'created_by' => $user_id,
         ]);
+
+        // Get the uploaded file
+        $file = $form_input['ad_image'];
+        $file_extension = $file->getClientOriginalExtension();
+        $file_name = "$createAd->id." . $file_extension;
+        $file->storeAs('ads', $file_name, 'public');
+
+        $createAd->file_path = 'storage/ads/' . $file_name;
+        $createAd->save();
 
         return redirect()->back()->with('successUpload', ' Successfully Uploaded Image!');
     }
@@ -92,7 +95,7 @@ class HomeController extends Controller
             $file = $request->file('ad_image');
             $image_name = $request->input('image_name');
             $file_extension = $file->getClientOriginalExtension();
-            $file_name = "$image_name." . $file_extension;
+            $file_name = "$id." . $file_extension;
             // Store the file
             $file->storeAs('ads', $file_name, 'public');
             // Update the file path
