@@ -26,15 +26,15 @@ class HomeController extends Controller
     {
         $data = [];
         $data['ads'] = Ad::leftJoin('users as creator', 'creator.id', 'ads.created_by')
-            ->leftJoin('users as updator','updator.id','ads.updated_by' )
+            ->leftJoin('users as updator', 'updator.id', 'ads.updated_by')
             ->select(
                 'ads.*',
                 'creator.name as creator_name',
                 'updator.name as updator_name'
             )
             ->whereNull('ads.deleted_at')
-            ->paginate(10);  
-    
+            ->paginate(10);
+
         return view('home', $data);
     }
     public function create(Request $request)
@@ -53,10 +53,10 @@ class HomeController extends Controller
             'image_name' => $image_name,
             'ad_placement' => $ad_placement,
             'ad_placement' => $ad_placement,
-            // 'file_path' => 'storage/ads/' . $file_name, 
             'link' => $re_link,
             'created_by' => $user_id,
         ]);
+        $createAd->save();
 
         // Get the uploaded file
         $file = $form_input['ad_image'];
@@ -69,7 +69,7 @@ class HomeController extends Controller
 
         return redirect()->back()->with('successUpload', ' Successfully Uploaded Image!');
     }
-    
+
     public function delete($id)
     {
         $user = Ad::withTrashed()->find($id);
@@ -79,17 +79,17 @@ class HomeController extends Controller
 
     public function view($id)
     {
-        $adInfo = Ad::where('id',$id)
-        ->first();
+        $adInfo = Ad::where('id', $id)
+            ->first();
 
         return $adInfo;
     }
-    
+
     public function update(Request $request, string $id)
     {
         $user_id = auth()->user()->id;
         $updateAd = Ad::find($id);
-    
+
         // Check if a file is uploaded
         if ($request->hasFile('ad_image')) {
             $file = $request->file('ad_image');
@@ -114,9 +114,7 @@ class HomeController extends Controller
             'updated_by' => $user_id,
             'updated_at' => now(),
         ]);
-    
+
         return redirect()->back()->with('successEdit', 'Update Successfully');
     }
-    
-
 }
