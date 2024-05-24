@@ -114,19 +114,19 @@
             </div>
         </div>
         <ul>
-            <li>
-                <a href="{{ url('/') }}">
-                    <i class="bx"><span class="material-symbols-outlined">arrow_back</span></i>
-                    <span class="nav-item">Website</span>
-                </a>
-                <span class="tooltip">Website</span>
-            </li>
             <li >
                 <a href="{{ route('login') }}" class="{{ Request::is('home') ? ' active-nav' : '' }}">
                     <i class="bx"><span class="material-symbols-outlined">dashboard</span></i>
                     <span class="nav-item">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="{{ route('formResponse')}}" class="{{ Request::is('form_response') ? ' active-nav' : '' }}">
+                    <i class="bx"><span class="material-symbols-outlined">receipt_long</span></i>
+                    <span class="nav-item">Forms</span>
+                </a>
+                <span class="tooltip">Forms</span>
             </li>
             <li>
                 <a href="{{ route('manageAccount')}}" class="{{ Request::is('manage_account') ? ' active-nav' : '' }}">
@@ -141,6 +141,13 @@
                     <span class="nav-item">Profile</span>
                 </a>
                 <span class="tooltip">My Profile</span>
+            </li>
+            <li>
+                <a href="{{ url('/') }}">
+                    <i class="bx"><span class="material-symbols-outlined">arrow_back</span></i>
+                    <span class="nav-item">Website</span>
+                </a>
+                <span class="tooltip">Website</span>
             </li>
             <li class="logout-container">
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
