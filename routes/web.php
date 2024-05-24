@@ -56,6 +56,7 @@ Route::middleware(['auth'])->group(function () {
     //Form Response
     Route::get('/form_response', [FormResponseController::class, 'index'])->name('formResponse');
     Route::get('/form_response/{id}/view', [FormResponseController::class, 'view'])->name('viewResponse');
+    Route::get('/form_response/{id}/delete', [FormResponseController::class, 'delete'])->name('deleteResponse');
 
     //profile
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
