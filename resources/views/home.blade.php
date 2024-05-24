@@ -228,7 +228,7 @@
                                     <td>{{$ad->updator_name}}</td>
                                     <td>{{$ad->updated_at}}</td>
                                     <td class="d-flex u-gap-10">
-                                        <button class="u-action-btn u-bg-card-header-color view-modal" data-entry-id="{{ $ad->id }}" data-href="">
+                                        <button class="u-action-btn u-bg-card-header-color view-modal" data-entry-id="{{ $ad->id }}" data-href="{{ route('viewAd', $ad->id) }}">
                                             View
                                         </button>
                                         <button class="u-action-btn u-bg-primary edit-modal" data-entry-id="{{ $ad->id }}" data-href="{{ route('viewAd', $ad->id) }}">
