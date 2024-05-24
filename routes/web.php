@@ -29,6 +29,10 @@ Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 })->name('privacy_policy');
 
+Route::get('/promo-contact-form', function () {
+    return view('promo-contact-form');
+});
+
 Route::post('/form_response', [FormResponseController::class, 'storeFormResponse'])->name('formResponse.store');
 Auth::routes();
 
@@ -55,13 +59,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/form_response/{id}/view', [FormResponseController::class, 'view'])->name('viewResponse');
 
     //profile
-    Route::get('profile',[ProfileController::class,'index'])->name('profile');
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::post('/profile/{id}/userName', [ProfileController::class, 'updateUsername'])->name('update_username');
     Route::post('/profile/{id}/updatePassword', [ProfileController::class, 'updatePassword'])->name('update_password');
     Route::post('/profile/profile_image', [ProfileController::class, 'profile_image'])->name('upload_img');
-
-
-
 });
 
 //logout
