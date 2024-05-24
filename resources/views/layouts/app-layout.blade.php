@@ -47,9 +47,6 @@
     </section>
     <div class="bottom-bg w-100 position-absolute d-none d-xl-flex flex-column align-items-center justify-content-center">
         <img class="gear-bg w-100" src="{{asset('images/Elements/Footer Gear 2.svg')}}" alt="">
-        @if (!empty($__env->yieldContent('ad_section')))
-        <div class="bg-extender"></div>
-        @endif
     </div>
     @yield('script_content')
 </body>
