@@ -288,13 +288,30 @@
     </section>
 @endsection
 
-{{-- @section('ad_section')
-<div class="_ad-section">
+@section('ad_section')
+
+    <section class="ad-container">
+        <div class="ad-slider-wrapper">
+            <div class="ad-slider">
+                <img id="slider1" src="{{ asset('img/ad1.jpg') }}" alt="">
+                <img id="slider2" src="{{ asset('img/logo.png') }}" alt="">
+                <img id="slider3" src="{{ asset('img/ad2.jpg') }}" alt="">
+            </div>
+            <div class="ad-slider-nav">
+                <a href="#slider1"></a>
+                <a href="#slider2"></a>
+                <a href="#slider3"></a>
+            </div>
+        </div>
+    </section>
+
+
+{{-- <div class="_ad-section">
     <a target="_blank" href="#" class="_ad-link">
         <img class="img-fluid" src="https://plus.unsplash.com/premium_photo-1661439660359-3bf491320728?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
     </a>
-</div>
-@endsection --}}
+</div> --}}
+@endsection
 
 @section('script_content')
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -373,5 +390,29 @@
             const boxBottom = boxTop + $box.height();
             return boxBottom > viewportTop && boxTop < viewportBottom;
         }
-  </script>
+
+        $(document).ready(function () {
+            const $slider = $('.ad-slider');
+            const $slides = $('.ad-slider img');
+            let currentIndex = 0;
+            const intervalTime = 2000;
+
+            function slideToIndex(index) {
+                $slider.animate({
+                    scrollLeft: $slides.eq(index).position().left
+                }, 'smooth');
+            }
+
+            function autoSlide() {
+                currentIndex = (currentIndex + 1) % $slides.length;
+                slideToIndex(currentIndex);
+            }
+
+            let slideInterval = setInterval(autoSlide, intervalTime);
+
+            $slider.on('mouseover', () => clearInterval(slideInterval));
+            $slider.on('mouseout', () => slideInterval = setInterval(autoSlide, intervalTime));
+        });
+
+    </script>
 @endsection
