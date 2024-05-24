@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->mediumInteger('created_by')->unsigned()->nullable();
             $table->mediumInteger('updated_by')->unsigned()->nullable();
+            $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
