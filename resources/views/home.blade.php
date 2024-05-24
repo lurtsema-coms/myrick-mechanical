@@ -198,7 +198,7 @@
                     <div class="d-flex align-items-center">
                         <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate Ad</button>
                         @if (session('successUpload'))
-                            <span style="color: green; display:block;">{{ session('successUpload') }}</span>
+                            <span style="color: green; display:block; margin-left:5px">{{ session('successUpload') }}</span>
                         @endif
                     </div>
                     <div class="table-responsive">
