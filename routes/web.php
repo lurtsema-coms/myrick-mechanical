@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [WelcomeController::class, 'index']);
-
+Route::get('send', [WelcomeController::class, 'sendnotification']);
 
 Route::get('/privacy-policy', function () {
     return view('privacy-policy');
@@ -43,7 +43,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home/{id}/delete', [HomeController::class, 'delete'])->name('deleteAd');
     Route::get('/home/{id}/view', [HomeController::class, 'view'])->name('viewAd');
     Route::post('/home/{id}/update', [HomeController::class, 'update'])->name('updateAd');
-
 
     //Manage Account
     Route::get('/manage_account', [ManageAccountController::class, 'index'])->name('manageAccount');
