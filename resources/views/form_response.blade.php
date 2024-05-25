@@ -20,13 +20,13 @@
 <div class="modal-center generate-file" style="display:none">
     <div class="modal-box">
         <div class="modal-content">
-            <form action="" method="POST" autocomplete="off">
+            <form action="{{ route('form_response.export') }}" method="POST" autocomplete="off" target="_blank">
                 @csrf
                 <table class="custom_normal_table">
                     <tbody>
                         <tr>
                             <td colspan="2">
-                                <h3 class="f-weight-bold">Generate Export File</h3>
+                                <h3 class="f-weight-bold">Export</h3>
                             </td>
                         </tr>
                         <tr>
@@ -109,7 +109,7 @@
                 <div class="container-header"><span>Forms</span></div>
                 <div class="container-body">
                     <div>
-                        <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate File</button>
+                        <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Export Data</button>
                     </div>
                     <div class="table-responsive">
                         <table class="myTable" >

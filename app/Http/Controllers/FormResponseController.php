@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\FormResponseExport;
 use App\Mail\FormResponseEmail;
 use App\Models\FormResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
 
 class FormResponseController extends Controller
 {
@@ -65,5 +67,10 @@ class FormResponseController extends Controller
         $user = FormResponse::withTrashed()->find($id);
         $user->delete();
         return true;
+    }
+
+    public function export(Request $request)
+    {
+        return Excel::download(new FormResponseExport($request->from_date, $request->to_date), 'form-responses-' . date('Y-m-d H.i.s') . '.xlsx');
     }
 }

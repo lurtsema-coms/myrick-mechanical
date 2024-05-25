@@ -56,6 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/form_response', [FormResponseController::class, 'index'])->name('formResponse');
     Route::get('/form_response/{id}/view', [FormResponseController::class, 'view'])->name('viewResponse');
     Route::get('/form_response/{id}/delete', [FormResponseController::class, 'delete'])->name('deleteResponse');
+    Route::post('/form_response/export', [FormResponseController::class, 'export'])->name('form_response.export');
 
     //profile
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
