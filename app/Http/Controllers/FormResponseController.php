@@ -13,7 +13,8 @@ class FormResponseController extends Controller
     public function index()
     {
         $data['forms'] = FormResponse::whereNull('deleted_at')
-            ->get();
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
 
         return view('form_response', $data);
     }

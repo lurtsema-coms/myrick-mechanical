@@ -35,6 +35,7 @@ class ManageAccountController extends Controller
             )
             ->where('users.id', '!=', $user_id)
             ->whereNull('users.deleted_at')
+            ->orderBy('users.created_at', 'desc')
             ->get();
     
         return view('manage_account', $data);

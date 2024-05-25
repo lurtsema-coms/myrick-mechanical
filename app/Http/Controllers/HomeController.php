@@ -33,6 +33,7 @@ class HomeController extends Controller
                 'updator.name as updator_name'
             )
             ->whereNull('ads.deleted_at')
+            ->orderBy('ads.created_at', 'desc') // Order by created_at in descending order
             ->paginate(10);
 
         return view('home', $data);

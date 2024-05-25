@@ -2,9 +2,9 @@
 
 @section('styles')
 <style>
-    .modal-box{
+    /* .modal-box{
         max-width: 75rem !important;
-    }
+    } */
 
 
     input::file-selector-button {
@@ -34,19 +34,11 @@
                                 <p>From Date:</p>
                                 <input class="u-input" name="from_date" type="date" required>
                             </td>
-                            <td>
-                                <p>To Date:</p>
-                                <input class="u-input" name="to_date" type="date" required>
-                            </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Email</p>
-                                <select class="js-example-basic-single s-single multiple-select" name="form_responses_id[]" id="form_responses_id" multiple="multiple" required >
-                                    <option selected value="">Select All</option>
-                                    <option value="">test</option>
-                                    <option value="">test</option>
-                                </select>    
+                                <p>To Date:</p>
+                                <input class="u-input" name="to_date" type="date" required>
                             </td>
                         </tr>
                     </tbody>
@@ -116,9 +108,9 @@
             <div class="main-container">
                 <div class="container-header"><span>Forms</span></div>
                 <div class="container-body">
-                    {{-- <div>
+                    <div>
                         <button class="u-btn u-bg-default u-t-dark u-border-1-gray u-box-shadow-default btn-open-add">Generate File</button>
-                    </div> --}}
+                    </div>
                     <div class="table-responsive">
                         <table class="myTable" >
                             <thead>
@@ -156,6 +148,11 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- Pagination links -->
+                    <div class=pagination-container>
+                        {{ $forms->links() }}
+                    </div>
+                    <p>Showing {{ $forms->firstItem() ?? 0 }} to {{ $forms->lastItem() ?? 0 }} of {{ $forms->total() }} items.</p>
                 </div>
             </div>
         </div>
