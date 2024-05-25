@@ -60,16 +60,8 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                            <div class="remember-password-containter mb-4">
-                                &nbsp
-                                @if (Route::has('password.request'))
-                                    <a class="" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
                         </div>
-                        <div class="button-container">
+                        <div class="button-container mt-3">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Login') }}
                             </button>
