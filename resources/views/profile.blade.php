@@ -128,9 +128,12 @@
                                                         <img src="{{ asset('profile_picture/img/'.auth()->user()->img ) }}" alt="" id="img_user_photo" loading="lazy">
                                                     @endif
                                                     </label>
-                                                    <input type="file" id="user_photo" name="user_photo" style="display:none" accept="image/jpeg,image/png">
+                                                    <input type="file" id="user_photo" name="user_photo" style="display:none" accept="image/jpeg,image">
                                                 </div>
                                             </form>
+                                            <div id="photo_error" style="display: none">
+                                                <p style="color: rgb(235, 0, 0); font-size: 12px">Accepts jpeg/jpg only</p>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -221,52 +224,53 @@
         }
 
         $('#photoForm').on('change', function(event){
-            event.preventDefault();
-            var formData = new FormData();
-            formData.append('photo', $('#user_photo')[0].files[0]);
-            formData.append('_token', '{{ csrf_token() }}');
-            var fileType = $('#user_photo')[0].files[0].type;
-            if (fileType != "image/jpeg" && fileType != "image/png") {
-                $('#photo_error').show();
-            } else {
-                $('#photo_error').hide();
+                event.preventDefault()
+                var formData = new FormData();
+                formData.append('photo', $('#user_photo')[0].files[0]);
+                formData.append('_token', '{{ csrf_token() }}');
+                if ($('#user_photo')[0].files[0].type != "image/jpeg") {
+                    $('#photo_error').show();
+                } else {
+                    $('#photo_error').hide();
+                }
                 $.ajax({
                     url: '{{ route('upload_img') }}',
                     type: 'POST',
-                    data: formData,
+                    data: formData, 
                     dataType: 'json',
-                    contentType: false,
-                    processData: false,
+                    contentType: false, // required for processing file data
+                    processData: false, // required for processing file data
                     success: function(response){
+                        // Add a unique parameter to the image source URL
                         var timestamp = new Date().getTime();
                         $('#img_user_photo').attr('src', '{{ asset('profile_picture/img/') }}' + '/' + response.photo_name + '?' + timestamp);
-                        let timerInterval;
+                        let timerInterval
                         Swal.fire({
-                            html: 'Your profile picture has been updated successfully',
-                            timer: 1200,
-                            timerProgressBar: false,
-                            didOpen: () => {
-                                Swal.showLoading();
-                                const b = Swal.getHtmlContainer().querySelector('b');
-                                timerInterval = setInterval(() => {
-                                    b.textContent = Swal.getTimerLeft();
-                                }, 100);
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
+                        html: 'Your profile picture has been updated successfully',
+                        timer: 1200,
+                        timerProgressBar: false,
+                        didOpen: () => {
+                            Swal.showLoading()
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
                         }).then((result) => {
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log('I was closed by the timer');
-                            }
-                        });
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
+                        })
                     },
                     error: function(error){
                         console.log(error);
                     }
                 });
-            }
-        });
+            });
 
 
     });

@@ -66,21 +66,23 @@ class ProfileController extends Controller
         return redirect()->back()->with('successUsername', 'Succefully Changed Username And Email!');
     }
 
-    public function profile_image(Request $request)
-    {
+    public function profile_image(Request $request){
+
         $request->validate([
-            'photo' => 'required|mimes:jpeg,png'
+            'photo' => 'required|mimes:jpeg'
         ]);
         
         $imageName = auth()->user()->id.'.'.$request->photo->extension();
         $request->photo->move(public_path('profile_picture/img'), $imageName);
-    
+
         $user = User::find(auth()->user()->id);
         $user->img = $imageName;
         $user->save();
-    
+
         return response()->json(['success'=>'Image uploaded successfully.', 'photo_name'=>$user->img]);
     }
+
+    
 
     /**
      * Show the form for editing the specified resource.
