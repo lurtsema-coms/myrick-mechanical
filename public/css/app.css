@@ -163,11 +163,15 @@ body {
 }
 
 .customer-satisfaction-left-side {
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .aircon-guy {
   max-width: 100%;
+}
+
+.accreditation-wrapper {
+  width: 80%;
 }
 
 .accreditation-img-wrapper {

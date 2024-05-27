@@ -71,11 +71,11 @@
             <p class="fs-5 mb-1 fst-italic text-center">“This is why we do what we do”</p>
             <h1 class="fw-bold fs-2 text-center">CUSTOMER SATISFACTION GUARANTEED!</h1>
             <div class="my-5 d-flex flex-column flex-xl-row customer-satisfaction-content justify-content-center align-items-center">
-                <div class="customer-satisfaction-left-side mx-auto align-self-xl-end">
-                    <img width="1200" class="aircon-guy img-fluid rounded-4" src="{{ asset('images/Photos/First pic.png') }}" alt="">
+                <div class="customer-satisfaction-left-side mx-auto align-self-xl-center d-flex align-items-center justify-content-center">
+                    <img width="1200" class="aircon-guy rounded-4" src="{{ asset('images/Photos/team-photo.png') }}" alt="">
                 </div>
                 <div class="accreditation-wrapper">
-                    <p class="py-3 ps-3 fs-6 lh-sm ">With our team of skilled technicians
+                    <p class="py-3 ps-3 fs-6 lh-sm m-0">With our team of skilled technicians
                         and commitment to going beyond
                         expectations, you can trust us to keep
                         your indoor environment comfortable
