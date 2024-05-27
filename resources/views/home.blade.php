@@ -308,8 +308,8 @@
                         type: 'GET',
                         success: function(response) {
                             console.log(response);
-                            $('#view_start').val(response.to_date);
-                            $('#view_end').val(response.from_date);
+                            $('#view_start').val(response.from_date);
+                            $('#view_end').val(response.to_date);
                             $('#view_image_name').val(response.image_name);
                             $('#view_ad_placement').val(response.ad_placement);
                             $('#view_re_link').val(response.link);
