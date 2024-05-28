@@ -104,7 +104,7 @@ body {
 }
 
 .logo-photo {
-  max-height: 170px;
+  max-height: min(170px, 18vh);
 }
 
 .contact-us-today {
