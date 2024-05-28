@@ -107,36 +107,9 @@
             <div class="main-container">
                 <div class="container-header"><span>Account Settings</span></div>
                 <div class="container-body-profile">
-                    <div class="d-flex">
-                    </div>
                     <div>
                         <table class="custom_form_table">
                             <tbody>
-                                <tr class="">
-                                    <td class="custom_form_title">
-                                        <span >Profile Picture:</span>
-                                    </td>
-                                    <td class="custom_form_body change-photo-container">
-                                        <div>
-                                            <form method="POST" id="photoForm" enctype="multipart/form-data">
-                                                @csrf
-                                                <div class="user_picture">
-                                                    <label for="user_photo" id="photo_label">
-                                                    @if (auth()->user()->img == null)
-                                                        <img src="{{ asset('profile_picture/img/user.png') }}" alt="" id="img_user_photo" loading="lazy">
-                                                    @else
-                                                        <img src="{{ asset('profile_picture/img/'.auth()->user()->img ) }}" alt="" id="img_user_photo" loading="lazy">
-                                                    @endif
-                                                    </label>
-                                                    <input type="file" id="user_photo" name="user_photo" style="display:none" accept="image/jpeg,image">
-                                                </div>
-                                            </form>
-                                            <div id="photo_error" style="display: none">
-                                                <p style="color: rgb(235, 0, 0); font-size: 12px">Accepts jpeg/jpg only</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
                                 <tr class="custom_form_password">
                                     <td class="custom_form_title">
                                         <span>Name:</span>
