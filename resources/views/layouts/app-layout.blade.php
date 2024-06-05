@@ -21,6 +21,30 @@
         gtag('js', new Date());
         
         gtag('config', 'AW-16596272245');
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16596272245/gIhDCLK7l7cZEPWI3Ok9',
+            'value': 1.0,
+            'currency': 'PHP'
+        });
+
+        function gtag_report_conversion(url) {
+            const callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16596272245/gIhDCLK7l7cZEPWI3Ok9',
+                'value': 1.0,
+                'currency': 'PHP',
+                'event_callback': callback
+            });
+            return false;
+        }
+        
+        $(document).on('click', '.button-action', function(e) {
+            gtag_report_conversion();
+        });
     </script>
 
     @yield('styles')
