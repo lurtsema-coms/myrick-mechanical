@@ -168,15 +168,40 @@
     </section>
     <section id="our-works-section" class="our-works-section py-lg-5">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
-            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center w-100 gap-md-3 mb-5 mb-lg-0">
-                <h1 class="text-center fw-bold mb-3 text-nowrap">WE WORK WITH</h1>
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center w-100 gap-md-3 mb-5">
+                <h1 class="text-center fw-bold text-nowrap">WE WORK WITH</h1>
                 <img height="70px" src="{{ asset('images/Partners/ruud-logo.png') }}" alt="ruud logo">
             </div>
-            <div class="swiper">
+            <div class="swiper" id="swiper-works">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide p-lg-5">
+                    <div class="swiper-slide">
                         <video class="w-100 rounded-4" autoplay muted loop>
-                            <source src="{{ asset('videos/RU-SM-Htg-Blankets.mp4') }}" />
+                            <source src="{{ asset('videos/RU-SM-Htg-Blankets (1).mp4') }}" />
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video class="w-100 rounded-4" autoplay muted loop>
+                            <source src="{{ asset('videos/RU-SM-PP-Gen_XtremeHob (1).mp4') }}" />
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video class="w-100 rounded-4" autoplay muted loop>
+                            <source src="{{ asset('videos/RU-SM-Htg-Bundled (1).mp4') }}" />
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video class="w-100 rounded-4" autoplay muted loop>
+                            <source src="{{ asset('videos/RU-SM-Clg-IceRink (1).mp4') }}" />
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video class="w-100 rounded-4" autoplay muted loop>
+                            <source src="{{ asset('videos/RU-SM-Clg-Picnic (1).mp4') }}" />
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video class="w-100 rounded-4" autoplay muted loop>
+                            <source src="{{ asset('videos/RU-SM-Gen-EcoNet (1).mp4') }}" />
                         </video>
                     </div>
                     <div class="swiper-slide">
@@ -211,7 +236,7 @@
         <div class="section-wrapper m-1 m-lg-5 px-1 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold mb-2 mb-lg-5">TESTIMONIALS</h1>
             {{-- <div class="row row-cols-1 row-cols-xxl-4 gap-3"> --}}
-            <div class="swiper">
+            <div class="swiper" id="swiper-testimonials">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
@@ -318,35 +343,63 @@
 @section('script_content')
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper(".swiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 500,
-            modifier: 1,
-            slideShadows: true,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        breakpoints: {
-            300: {
-                slidesPerView: 1,
-                spaceBetween: 20,
+        const swiperWorks = new Swiper("#swiper-works", {
+            grabCursor: true,
+            centeredSlides: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
-            1200: {
-                slidesPerView: 2,
-                spaceBetween: 40,
+            pagination: {
+                el: ".swiper-pagination",
             },
-        },
+            breakpoints: {
+                300: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
         });
+
+        const swiperTestimonials = new Swiper("#swiper-testimonials", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 500,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            breakpoints: {
+                300: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+            },
+        });
+
+        
         $('.nav-hamburger').on('click', function() {
             $('.navbar-ul').slideToggle();
         });
