@@ -168,10 +168,24 @@
     </section>
     <section id="our-works-section" class="our-works-section py-lg-5">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
-            <h1 class="text-center fw-bold mb-3">OUR WORKS</h1>
+            <h1 class="text-center fw-bold mb-3">WE WORK WITH RUUD</h1>
             <div class="swiper">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide p-5">
+                        <video class="w-100 rounded-4" autoplay muted loop>
+                            <source src="{{ asset('videos/RU-SM-Htg-Blankets.mp4') }}" />
+                        </video>
+                    </div>
                     <div class="swiper-slide">
+                        <img class="rounded-4" src="{{ asset('images/Photos/BG_Roof-1.webp') }}" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="rounded-4" src="{{ asset('images/Photos/DSC_4151-RUUD-Logo.webp') }}" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="rounded-4" src="{{ asset('images/Photos/BG_Roof-18.webp') }}" />
+                    </div>
+                    {{-- <div class="swiper-slide">
                         <img class="rounded-4" src="{{ asset('images/Photos/photos from old web (2).webp') }}" />
                     </div>
                     <div class="swiper-slide">
@@ -182,7 +196,7 @@
                     </div>
                     <div class="swiper-slide">
                         <img class="rounded-4" src="{{ asset('images/Photos/photos from old web (5).webp') }}" />
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev"></div>
