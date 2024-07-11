@@ -345,7 +345,7 @@
     <script>
         const swiperWorks = new Swiper("#swiper-works", {
             grabCursor: true,
-            centeredSlides: true,
+            centeredSlides: false,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
