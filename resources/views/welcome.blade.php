@@ -168,13 +168,13 @@
     </section>
     <section id="our-works-section" class="our-works-section py-lg-5">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
-            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center w-100 gap-md-3">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center w-100 gap-md-3 mb-5 mb-lg-0">
                 <h1 class="text-center fw-bold mb-3 text-nowrap">WE WORK WITH</h1>
                 <img height="70px" src="{{ asset('images/Partners/ruud-logo.png') }}" alt="ruud logo">
             </div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide p-5">
+                    <div class="swiper-slide p-lg-5">
                         <video class="w-100 rounded-4" autoplay muted loop>
                             <source src="{{ asset('videos/RU-SM-Htg-Blankets.mp4') }}" />
                         </video>
