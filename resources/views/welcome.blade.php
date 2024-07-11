@@ -168,7 +168,10 @@
     </section>
     <section id="our-works-section" class="our-works-section py-lg-5">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
-            <h1 class="text-center fw-bold mb-3">WE WORK WITH RUUD</h1>
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center w-100 gap-md-3">
+                <h1 class="text-center fw-bold mb-3 text-nowrap">WE WORK WITH</h1>
+                <img height="70px" src="{{ asset('images/Partners/ruud-logo.png') }}" alt="ruud logo">
+            </div>
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide p-5">
