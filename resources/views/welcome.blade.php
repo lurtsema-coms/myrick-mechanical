@@ -204,7 +204,7 @@
                             <source src="{{ asset('videos/RU-SM-Gen-EcoNet (1).mp4') }}" />
                         </video>
                     </div>
-                    <div class="swiper-slide">
+                    {{-- <div class="swiper-slide">
                         <img class="rounded-4" src="{{ asset('images/Photos/BG_Roof-1.webp') }}" />
                     </div>
                     <div class="swiper-slide">
@@ -212,7 +212,7 @@
                     </div>
                     <div class="swiper-slide">
                         <img class="rounded-4" src="{{ asset('images/Photos/BG_Roof-18.webp') }}" />
-                    </div>
+                    </div> --}}
                     {{-- <div class="swiper-slide">
                         <img class="rounded-4" src="{{ asset('images/Photos/photos from old web (2).webp') }}" />
                     </div>
