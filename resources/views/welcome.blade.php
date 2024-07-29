@@ -235,7 +235,6 @@
     <section id="testimonials-section" class="testimonials-section">
         <div class="section-wrapper m-1 m-lg-5 px-1 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold mb-2 mb-lg-5">TESTIMONIALS</h1>
-            {{-- <div class="row row-cols-1 row-cols-xxl-4 gap-3"> --}}
             <div class="swiper" id="swiper-testimonials">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -295,7 +294,6 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
-            {{-- </div> --}}
         </div>
     </section>
     <section id="contact-us-section" class="contact-us-section">
@@ -306,7 +304,10 @@
             </p>
             <div class="w-100 row row-cols-xl-3 gap-5">
                 <div class="contact-left-side p-0 col d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-3">
-                    <h3 class="text-center">Pleasanton, KS</h3>
+                    <div>
+                        <h3 class="text-center">Pleasanton, Kansas 66075, US</h3>
+                        <p class="mb-0 text-center">We also serve the greater Kansas City metro area!</p>
+                    </div>
                     <div style="overflow:hidden;resize:none;max-width:100%;width:90%; min-height: 500px; aspect-ratio: 5 / 3;">
                         <div id="g-mapdisplay" style="height:100%; width:100%;max-width:100%; overflow:hidden border-radius: 1rem;">
                             <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=myrick+mechanical+&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
