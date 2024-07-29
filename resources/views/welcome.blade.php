@@ -289,20 +289,6 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- <div class="swiper-slide">
-                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <p class="stars text-warning">{{ str_repeat('★', $reviews['rating']) }}{{ str_repeat('☆', 5 - $review['rating']) }}</p>
-                                <p class="text-dark">({{ $reviews['user_ratings_total'] }} Google Reviews)</p>
-                                <a href="https://g.co/kgs/2XgGbUH" target="_blank" class="text-decoration-none text-center">
-                                    <p class="material-symbols-outlined text-dark text-center">open_in_new</p>
-                                    <p class="text-dark text-center fs-6 lh-sm">
-                                        View More
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
-                    </div> --}}
                     @endif
                 </div>
                 <div class="swiper-pagination"></div>
