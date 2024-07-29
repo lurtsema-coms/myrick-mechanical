@@ -305,8 +305,8 @@
             <div class="w-100 row row-cols-xl-3 gap-5">
                 <div class="contact-left-side p-0 col d-flex flex-column justify-content-start align-items-center flex-grow-1 gap-3">
                     <div>
-                        <h3 class="text-center">Pleasanton, Kansas 66075, US</h3>
                         <p class="mb-0 text-center">We also serve the greater Kansas City metro area!</p>
+                        <h3 class="text-center">Pleasanton, Kansas</h3>
                     </div>
                     <div style="overflow:hidden;resize:none;max-width:100%;width:90%; min-height: 500px; aspect-ratio: 5 / 3;">
                         <div id="g-mapdisplay" style="height:100%; width:100%;max-width:100%; overflow:hidden border-radius: 1rem;">
