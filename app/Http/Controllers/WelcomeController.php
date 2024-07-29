@@ -22,17 +22,20 @@ class WelcomeController extends Controller
             ->where('to_date', '>=', date('Y-m-d'))
             ->get();
 
-        $reviews = Cache::remember('review_details', 60, function () {
-            $response = Http::get('https://maps.googleapis.com/maps/api/place/details/json', [
-                'place_id' => env('GOOGLE_PLACE_ID'),
-                'fields' => 'reviews,rating,user_ratings_total',
-                'key' => env('GOOGLE_API_KEY'),
-                'reviews_sort' => 'newest',
-            ]);
+        try {
+            $reviews = Cache::remember('review_details', 60, function () {
+                $response = Http::get('https://maps.googleapis.com/maps/api/place/details/json', [
+                    'place_id' => env('GOOGLE_PLACE_ID'),
+                    'fields' => 'reviews,rating,user_ratings_total',
+                    'key' => env('GOOGLE_API_KEY'),
+                    'reviews_sort' => 'newest',
+                ]);
 
-            return $response->successful() ? $response->json()['result'] : null;
-        });
-
+                return $response->successful() ? $response->json()['result'] : null;
+            });
+        } catch (Throwable $th) {
+            $reviews = null;
+        }
         $data['reviews'] = $reviews;
         return view('welcome', $data);
     }
