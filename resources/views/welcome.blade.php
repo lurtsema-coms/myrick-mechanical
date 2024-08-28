@@ -166,6 +166,42 @@
             <a href="#" class="button-action text-blue bg-light text-decoration-none fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">LEARN MORE</a>
         </div>
     </section>
+    <section>
+        <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
+            <div class="swiper" id="swiper-work-photos">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                            <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/1.jpeg') }}" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                            <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/2.jpeg') }}" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                            <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/3.jpeg') }}" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                            <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/4.jpeg') }}" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                            <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/5.jpg') }}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
     <section id="our-works-section" class="our-works-section py-lg-5">
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-center w-100 gap-md-3 mb-5">
@@ -361,6 +397,32 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiperWorks = new Swiper("#swiper-works", {
+            grabCursor: true,
+            centeredSlides: false,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            breakpoints: {
+                300: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+        });
+
+        const swiperWorksPhotos = new Swiper("#swiper-work-photos", {
             grabCursor: true,
             centeredSlides: false,
             navigation: {
