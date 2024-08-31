@@ -166,7 +166,8 @@
             <a href="#" class="button-action text-blue bg-light text-decoration-none fw-bold fs-4 rounded-pill mt-3 px-3 px-sm-5 py-2 mt-3 border-0 text-nowrap">LEARN MORE</a>
         </div>
     </section>
-    <section>
+    <section style="margin-top: 5rem;">
+        <h1 class="section-title text-center fw-bold">HVAC SYSTEMS</h1>
         <div class="section-wrapper m-3 m-md-5 px-3 px-md-5 d-flex flex-column align-items-center justify-content-center">
             <div class="swiper" id="swiper-work-photos">
                 <div class="swiper-wrapper">
@@ -425,6 +426,10 @@
         const swiperWorksPhotos = new Swiper("#swiper-work-photos", {
             grabCursor: true,
             centeredSlides: false,
+            autoplay: {
+                delay: 2500, 
+                disableOnInteraction: false,
+            },
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
