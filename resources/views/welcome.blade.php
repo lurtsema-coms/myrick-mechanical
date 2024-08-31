@@ -172,27 +172,27 @@
             <div class="swiper" id="swiper-work-photos">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1; margin: auto;">
                             <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/1.jpeg') }}" />
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1; margin: auto;">
                             <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/2.jpeg') }}" />
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1; margin: auto;">
                             <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/3.jpeg') }}" />
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1; margin: auto;">
                             <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/4.jpeg') }}" />
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1">
+                        <div class="rounded-4 position-relative overflow-hidden" style="max-width: 500px; min-width: 30%; aspect-ratio: 1; margin: auto;">
                             <img style="min-height:100%; min-width: 100%; object-fit:cover" class=" position-absolute" src="{{ asset('images/works/5.jpg') }}" />
                         </div>
                     </div>
