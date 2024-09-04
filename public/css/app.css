@@ -13,11 +13,11 @@ html {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  color: white;
 }
 
 body {
   background-color: linear;
+  color: white;
   background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgb(50, 54, 141) 100%);
 }
 

@@ -272,65 +272,8 @@
     <section id="testimonials-section" class="testimonials-section">
         <div class="section-wrapper m-1 m-lg-5 px-1 px-md-5 py-5 d-flex flex-column align-items-center justify-content-center">
             <h1 class="text-center fw-bold mb-2 mb-lg-5">TESTIMONIALS</h1>
-            <div class="swiper" id="swiper-testimonials">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 p-1 p-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <i class="material-icons fs-1 text-white bg-blue rounded-circle p-2">person</i>
-                                <h5 class="customer-name text-dark fw-semibold">Stacy V.</h5>
-                                <p class="stars text-warning">★★★★★</p>
-                                <p class="text-dark text-center fs-6 lh-sm">
-                                    We built a log home and were at a loss on what to do for heating and cooling. Travis Myrick came to our house gave us ideas and solved our problem. We love our mini splits. We highly recommend him, his workers and his company. They are the best!                        
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <i class="material-icons fs-1 text-white bg-blue rounded-circle p-2">person</i>
-                                <h5 class="customer-name text-dark fw-semibold">Nancy H.</h5>
-                                <p class="stars text-warning">★★★★★</p>
-                                <p class="text-dark text-center fs-6 lh-sm">
-                                    Myrick Mechanical LLC of Pleasanton KS. The Company installed the HVAC vents to the East side of the House. He was very professional, did the job quickly and reasonably priced. I would Highly recommend this company. Very good experience.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <i class="material-icons fs-1 text-white bg-blue rounded-circle p-2">person</i>
-                                <h5 class="customer-name text-dark fw-semibold">Stephanie S.</h5>
-                                <p class="stars text-warning">★★★★★</p>
-                                <p class="text-dark text-center fs-6 lh-sm">
-                                    Travis gave us an estimate and then was able to complete the job in good time. He was thorough and things were picked up and clean when he was done. I highly recommend Myrick Mechanical.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    @if ($reviews)
-                    @foreach ($reviews['reviews'] as $review)
-                    <div class="swiper-slide">
-                        <div class="testimonial-card-wrapper col p-0 py-4 rounded-5 flex-grow-1">
-                            <div class="testimonial-card h-100 py-5 px-1 px-lg-5 w-100 bg-light rounded-5 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                                <i class="material-icons fs-1 text-white bg-blue rounded-circle p-2">person</i>
-                                <h5 class="customer-name text-dark fw-semibold">{{ $review['author_name'] }}</h5>
-                                <p class="stars text-warning">{{ str_repeat('★', $review['rating']) }}{{ str_repeat('☆', 5 - $review['rating']) }}</p>
-                                <p class="text-dark text-center fs-6 lh-sm">
-                                    {!! nl2br(e($review['text']))  !!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    @endif
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div class="elfsight-app-7217af78-da76-400a-be00-fec1a7205344 p-5" data-elfsight-app-lazy style="border-radius: 2rem; background: white;"></div>
         </div>
     </section>
     <section id="contact-us-section" class="contact-us-section">
