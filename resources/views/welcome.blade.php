@@ -34,11 +34,14 @@
             <div class="icon-bar"></div>
         </button>
         <ul class="m-0 navbar-ul w-100 px-md-3 d-lg-flex flex-column flex-lg-row justify-content-between align-items-center list-unstyled">
-            <li class="text-center"><a href="#services-section" class="text-decoration-none text-blue fw-bold fs-4" href="">SERVICES</a></li>
             <li class="text-center"><a href="#" class="text-decoration-none text-blue fw-bold fs-4" href="">HOME</a></li>
+            <li class="text-center"><a href="#services-section" class="text-decoration-none text-blue fw-bold fs-4" href="">SERVICES</a></li>
             <li class="text-center"><a href="#customer-satisfaction-section" class="text-decoration-none text-blue fw-bold fs-4" href="">ABOUT</a></li>
             <li class="text-center"><a href="#contact-us-section" class="text-decoration-none text-blue fw-bold fs-4" href="">CONTACT</a></li>
             <li class="text-center"><a href="#our-works-section" class="text-decoration-none text-blue fw-bold fs-4" href="">WORKS</a></li>
+            @if (env('BLOG_LINK'))
+            <li class="text-center"><a href="{{ env('BLOG_LINK') }}" class="text-decoration-none text-blue fw-bold fs-4" href="">BLOGS</a></li>
+            @endif
         </ul>
     </nav>
     <section id="promo-section" class="promo-section">
