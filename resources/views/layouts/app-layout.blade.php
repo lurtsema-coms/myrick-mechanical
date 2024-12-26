@@ -5,6 +5,29 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- HTML Meta Tags -->
+    <title>Myrick Mechanical</title>
+    <meta name="description" content="Exceptional HVAC Services for Industrial, Commercial, and Residential. Whether it’s HVAC installation, maintenance, or repairs, we’ve got you covered." />
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Myrick Mechanical" />
+    <meta itemprop="description" content="Exceptional HVAC Services for Industrial, Commercial, and Residential. Whether it’s HVAC installation, maintenance, or repairs, we’ve got you covered." />
+    <meta itemprop="image" content="{{ asset('images/Partners/Logo.png') }}" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Myrick Mechanical" />
+    <meta property="og:description" content="Exceptional HVAC Services for Industrial, Commercial, and Residential. Whether it’s HVAC installation, maintenance, or repairs, we’ve got you covered." />
+    <meta property="og:image" content="{{ asset('images/Partners/Logo.png') }}" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Myrick Mechanical" />
+    <meta name="twitter:description" content="Exceptional HVAC Services for Industrial, Commercial, and Residential. Whether it’s HVAC installation, maintenance, or repairs, we’ve got you covered." />
+    <meta name="twitter:image" content="{{ asset('images/Partners/Logo.png') }}" />
+
+    <!-- Meta Tags Generated via https://heymeta.com -->
     <title>@yield('title', 'Myrick Mechanical')</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/Partners/Logo.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
